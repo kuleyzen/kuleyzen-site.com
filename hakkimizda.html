@@ -2,125 +2,7 @@
 <html lang="tr">
 <head>
 
-<style>
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fafaf5;
-    color: #2f2f2f;
-  }
-  .menu-toggle {
-    display: none;
-    background: #607744;
-    color: white;
-    padding: 1em;
-    text-align: right;
-    font-size: 1.4em;
-    cursor: pointer;
-    border-bottom: 1px solid #ccc;
-  }
-  .menu-toggle:hover {
-    background: #4e6137;
-  }
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #607744;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
-  }
-  nav a {
-    color: white;
-    padding: 0.75em 1.5em;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  nav a:hover {
-    background-color: #4e6137;
-  }
-  nav.active {
-    max-height: 500px;
-    opacity: 1;
-  }
-  @media (min-width: 769px) {
-    .menu-toggle {
-      display: none;
-    }
-    nav {
-      display: flex !important;
-      max-height: none;
-      opacity: 1 !important;
-    }
-  }
 
-/* Mobiloptimierung */
-@media (max-width: 768px) {
-  .product-grid, .card-grid {
-    flex-direction: column !important;
-    align-items: center;
-  }
-  .product-box, .card {
-    width: 100% !important;
-    max-width: 90%;
-  }
-  .navbar ul {
-    flex-direction: column;
-    padding: 0;
-  }
-  .navbar ul li {
-    margin: 10px 0;
-  }
-}
-
-<style>
-.menu-toggle {
-  display: none;
-  background-color: #4b5320;
-  color: white;
-  padding: 10px 15px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .navbar ul {
-    display: none;
-    flex-direction: column;
-    background-color: #4b5320;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-
-  .navbar ul.show-menu {
-    display: flex;
-    animation: slideIn 0.3s ease-in-out forwards;
-  }
-
-  .navbar ul li {
-    padding: 12px;
-    border-top: 1px solid #5f6d3b;
-    text-align: center;
-  }
-
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-}
-</style>
 
 </style>
 <script>
@@ -132,213 +14,50 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-<style>
-  body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  .language-switcher {
-    padding: 1em;
-    text-align: right;
-    font-size: 0.9em;
-  }
-  header, nav {
-    background-color: #333;
-    color: white;
-    padding: 1em;
-    text-align: center;
-  }
-  nav a {
-    color: white;
-    padding: 0.5em;
-    display: inline-block;
-    text-decoration: none;
-  }
-  nav a:hover {
-    background-color: #444;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  main {
-    padding: 1em;
-  }
-  @media (max-width: 600px) {
-    nav {
-      font-size: 0.9em;
-    }
-    .language-switcher {
-      font-size: 0.8em;
-    }
-  }
 
-/* Mobiloptimierung */
-@media (max-width: 768px) {
-  .product-grid, .card-grid {
-    flex-direction: column !important;
-    align-items: center;
-  }
-  .product-box, .card {
-    width: 100% !important;
-    max-width: 90%;
-  }
-  .navbar ul {
-    flex-direction: column;
-    padding: 0;
-  }
-  .navbar ul li {
-    margin: 10px 0;
-  }
-}
-
-<style>
-.menu-toggle {
-  display: none;
-  background-color: #4b5320;
-  color: white;
-  padding: 10px 15px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .navbar ul {
-    display: none;
-    flex-direction: column;
-    background-color: #4b5320;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-
-  .navbar ul.show-menu {
-    display: flex;
-    animation: slideIn 0.3s ease-in-out forwards;
-  }
-
-  .navbar ul li {
-    padding: 12px;
-    border-top: 1px solid #5f6d3b;
-    text-align: center;
-  }
-
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-}
-</style>
 
 </style>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hakkımızda - Kuleyzen</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-    }
-    nav {
-      background-color: #4a5534;
-      padding: 15px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    main {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h2 {
-      color: #4a5534;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #4a5534;
-      color: white;
-      margin-top: 40px;
-    }
   
-/* Mobiloptimierung */
-@media (max-width: 768px) {
-  .product-grid, .card-grid {
-    flex-direction: column !important;
-    align-items: center;
-  }
-  .product-box, .card {
-    width: 100% !important;
-    max-width: 90%;
-  }
-  .navbar ul {
-    flex-direction: column;
-    padding: 0;
-  }
-  .navbar ul li {
-    margin: 10px 0;
-  }
-}
+
+</style>
 
 <style>
 .menu-toggle {
   display: none;
   background-color: #4b5320;
   color: white;
-  padding: 10px 15px;
+  padding: 10px;
+  font-size: 18px;
   text-align: center;
   cursor: pointer;
-  font-size: 18px;
 }
-
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
-
   .navbar ul {
     display: none;
     flex-direction: column;
     background-color: #4b5320;
-    margin: 0;
     padding: 0;
+    margin: 0;
     width: 100%;
   }
-
-  .navbar ul.show-menu {
+  .navbar ul.show {
     display: flex;
-    animation: slideIn 0.3s ease-in-out forwards;
   }
-
   .navbar ul li {
     padding: 12px;
-    border-top: 1px solid #5f6d3b;
     text-align: center;
-  }
-
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    border-top: 1px solid #5f6d3b;
   }
 }
 </style>
 
-</style>
 </head>
 <body>
 <div class="hero" style="background-image: url('hero.jpg'); background-size: cover; background-position: center center; color: white; padding: 80px 20px; text-align: center;">
