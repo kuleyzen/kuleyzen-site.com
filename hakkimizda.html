@@ -156,18 +156,25 @@
         font-size: 20px;
         cursor: pointer;
         display: none;
+        z-index: 999;
+        position: relative;
     }
     .menu {
         display: flex;
         gap: 15px;
-        background-color: #f4f4f4;
-        padding: 10px;
+        background-color: #ffffff;
+        padding: 10px 15px;
         flex-wrap: wrap;
+        z-index: 999;
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .menu a {
         text-decoration: none;
-        color: #333;
+        color: #222;
         font-weight: bold;
+        padding: 10px;
+        font-size: 18px;
     }
     @media screen and (max-width: 768px) {
         .menu {
