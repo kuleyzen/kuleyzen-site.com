@@ -3,13 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anasayfa - Kuleyzen</title>
+  <title>Kuleyzen - Doğal Zeytinyağı</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
       color: #333;
+    }
+    header {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    header img.logo {
+      width: 200px;
+      margin-top: 30px;
+    }
+    header .hero {
+      width: 100%;
+      height: 80vh;
+      background-image: url('hero.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     nav {
       background-color: #4a5534;
@@ -23,34 +43,30 @@
       font-weight: bold;
       font-size: 18px;
     }
-    main {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #4a5534;
-    }
     footer {
       text-align: center;
       padding: 20px;
       background-color: #4a5534;
       color: white;
-      margin-top: 40px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="hero">
+      <img src="logo.png" alt="Kuleyzen Logo" class="logo">
+    </div>
+  </header>
   <nav>
-    <a href="start.html">Ana Sayfa</a>
+    <a href="index.html">Ana Sayfa</a>
     <a href="hakkimizda.html">Hakkımızda</a>
     <a href="urunler.html">Ürünlerimiz</a>
     <a href="zeytin-hakkinda-bilgi.html">Zeytin Hakkında Bilgi</a>
     <a href="iletisim.html">İletişim</a>
   </nav>
   <main>
-    <h2>Anasayfa</h2>
-    <p>Saurani, Karamani ve Habese gibi yerli zeytin çeşitlerinden, tamamen aile üretimiyle elde edilen butik ve doğal zeytinyağı. Kuleyzen ile hakiki lezzet sofranızda.</p>
+    <h2>Hoş Geldiniz</h2>
+    <p>Kuleyzen'e hoş geldiniz. Doğal, organik ve Hatay'ın bereketli topraklarından gelen saf zeytinyağlarımızı keşfedin.</p>
   </main>
   <footer>
     <p>&copy; 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
