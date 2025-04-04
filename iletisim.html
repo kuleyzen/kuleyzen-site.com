@@ -282,5 +282,18 @@
   <footer>
     <p>&copy; 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
   </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
