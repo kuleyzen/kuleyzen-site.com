@@ -78,6 +78,50 @@
     margin: 10px 0;
   }
 }
+
+<style>
+.menu-toggle {
+  display: none;
+  background-color: #4b5320;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background-color: #4b5320;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .navbar ul.show-menu {
+    display: flex;
+    animation: slideIn 0.3s ease-in-out forwards;
+  }
+
+  .navbar ul li {
+    padding: 12px;
+    border-top: 1px solid #5f6d3b;
+    text-align: center;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+</style>
+
 </style>
 <script>
   function toggleMenu() {
@@ -148,6 +192,50 @@
     margin: 10px 0;
   }
 }
+
+<style>
+.menu-toggle {
+  display: none;
+  background-color: #4b5320;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background-color: #4b5320;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .navbar ul.show-menu {
+    display: flex;
+    animation: slideIn 0.3s ease-in-out forwards;
+  }
+
+  .navbar ul li {
+    padding: 12px;
+    border-top: 1px solid #5f6d3b;
+    text-align: center;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+</style>
+
 </style>
 
   <meta charset="UTF-8">
@@ -186,6 +274,50 @@
     margin: 10px 0;
   }
 }
+
+<style>
+.menu-toggle {
+  display: none;
+  background-color: #4b5320;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background-color: #4b5320;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .navbar ul.show-menu {
+    display: flex;
+    animation: slideIn 0.3s ease-in-out forwards;
+  }
+
+  .navbar ul li {
+    padding: 12px;
+    border-top: 1px solid #5f6d3b;
+    text-align: center;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+</style>
+
 </style>
 </head>
 <body>
@@ -219,6 +351,19 @@
     if (toggle) {
       toggle.addEventListener('click', () => {
         nav.classList.toggle('active');
+      });
+    }
+  });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.navbar ul');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('show-menu');
       });
     }
   });
