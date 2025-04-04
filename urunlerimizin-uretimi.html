@@ -1,7 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="tr">
 <head>
-
 <style>
   * {
     box-sizing: border-box;
@@ -66,9 +66,7 @@
     nav.classList.toggle('active');
   }
 </script>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <style>
   body {
     font-family: sans-serif;
@@ -111,11 +109,10 @@
     }
   }
 </style>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anasayfa - Kuleyzen</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anasayfa - Kuleyzen</title>
+<style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -150,15 +147,47 @@
       margin-top: 40px;
     }
   </style>
-</head>
-<body>
-
+<style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    .menu-toggle {
+        background-color: #607744;
+        color: white;
+        padding: 12px 16px;
+        font-size: 20px;
+        cursor: pointer;
+        display: none;
+    }
+    .menu {
+        display: flex;
+        gap: 15px;
+        background-color: #f4f4f4;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+    .menu a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+    @media screen and (max-width: 768px) {
+        .menu {
+            display: none;
+            flex-direction: column;
+        }
+        .menu.show {
+            display: flex;
+        }
+        .menu-toggle {
+            display: block;
+        }
+    }
+    </style></head>
+<body><div class="menu-toggle" onclick="toggleMenu()">☰ Menü</div><div class="menu" id="mainMenu"><a href="anasayfa.html">Anasayfa</a><a href="urunler.html">Ürünler</a><a href="urunlerimizin-uretimi.html">Üretim Süreci</a><a href="zeytin-hakkinda-bilgi.html">Zeytin Hakkında</a><a href="nar-hakkinda-bilgi.html">Nar Ekşisi</a><a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a></div>
 <div class="hero" style="background-image: url('hero.jpg'); background-size: cover; background-position: center center; color: white; padding: 80px 20px; text-align: center;">
-  <h1 style="font-size: 3em; margin-bottom: 0.5em;">Kuleyzen'e Hoş Geldiniz</h1>
-  <p style="font-size: 1.5em; margin-bottom: 1.5em;">Hatay bölgesinden gelen kaliteli, organik zeytinyağını keşfedin.</p>
-  <a href="iletisim.html" style="padding: 12px 30px; background-color: #607744; color: white; text-decoration: none; font-size: 1.2em; border-radius: 4px;">Şimdi Sipariş Ver</a>
+<h1 style="font-size: 3em; margin-bottom: 0.5em;">Kuleyzen'e Hoş Geldiniz</h1>
+<p style="font-size: 1.5em; margin-bottom: 1.5em;">Hatay bölgesinden gelen kaliteli, organik zeytinyağını keşfedin.</p>
+<a href="iletisim.html" style="padding: 12px 30px; background-color: #607744; color: white; text-decoration: none; font-size: 1.2em; border-radius: 4px;">Şimdi Sipariş Ver</a>
 </div>
-
 <div class="menu-toggle" onclick="toggleMenu()">☰ Menü</div>
 <div id="google_translate_element" style="text-align: right; padding: 10px;"></div>
 <script type="text/javascript">
@@ -169,37 +198,32 @@
     );
   }
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-
-
-  <nav>
-    <a href="start.html">Ana Sayfa</a>
-    <a href="hakkimizda.html">Hakkımızda</a>
-    <a href="urunler.html">Ürünlerimiz</a>
-    <a href="urunlerimizin-uretimi.html"> ürünlerimizin üretimi </a>
-    <a href="iletisim.html">İletişim</a>
-  </nav>
-  
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+<nav>
+<a href="start.html">Ana Sayfa</a>
+<a href="hakkimizda.html">Hakkımızda</a>
+<a href="urunler.html">Ürünlerimiz</a>
+<a href="urunlerimizin-uretimi.html"> ürünlerimizin üretimi </a>
+<a href="iletisim.html">İletişim</a>
+</nav>
 <main>
-  <section class="main-text">
-    <h1>Ürünlerimizin Üretimi</h1>
-    <p>Ürünlerimizin doğallığı ve kalitesi, üretim sürecimizin her aşamasındaki titizlikten kaynaklanır. Zeytinyağımız ve nar ekşimiz nasıl üretiliyor? Aşağıdan detayları öğrenebilirsiniz.</p>
-    <div class="product-grid">
-      <div class="product-box">
-        <h2>🫒 Zeytinyağı</h2>
-        <p>Zeytinlerimiz nasıl yetişiyor, nasıl toplanıyor ve sıkılıyor?</p>
-        <a href="zeytin-hakkinda-bilgi.html" class="button">Detaylı Bilgi</a>
-      </div>
-      <div class="product-box">
-        <h2>🍷 Nar Ekşisi</h2>
-        <p>Gerçek nar ekşisi nasıl olmalı? Üretimimizin detayları burada.</p>
-        <a href="nar-hakkinda-bilgi.html" class="button">Detaylı Bilgi</a>
-      </div>
-    </div>
-  </section>
+<section class="main-text">
+<h1>Ürünlerimizin Üretimi</h1>
+<p>Ürünlerimizin doğallığı ve kalitesi, üretim sürecimizin her aşamasındaki titizlikten kaynaklanır. Zeytinyağımız ve nar ekşimiz nasıl üretiliyor? Aşağıdan detayları öğrenebilirsiniz.</p>
+<div class="product-grid">
+<div class="product-box">
+<h2>🫒 Zeytinyağı</h2>
+<p>Zeytinlerimiz nasıl yetişiyor, nasıl toplanıyor ve sıkılıyor?</p>
+<a class="button" href="zeytin-hakkinda-bilgi.html">Detaylı Bilgi</a>
+</div>
+<div class="product-box">
+<h2>🍷 Nar Ekşisi</h2>
+<p>Gerçek nar ekşisi nasıl olmalı? Üretimimizin detayları burada.</p>
+<a class="button" href="nar-hakkinda-bilgi.html">Detaylı Bilgi</a>
+</div>
+</div>
+</section>
 </main>
-
 <style>
 .product-grid {
   display: flex;
@@ -233,10 +257,13 @@
   text-decoration: none;
 }
 </style>
-
-  <footer>
-    <p>&copy; 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
-  </footer>
-
-</body>
+<footer>
+<p>© 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
+</footer>
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("mainMenu");
+        menu.classList.toggle("show");
+    }
+    </script></body>
 </html>
