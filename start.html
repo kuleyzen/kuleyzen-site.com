@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafaf5;
+    color: #2f2f2f;
+  }
+  .menu-toggle {
+    display: none;
+    background: #607744;
+    color: white;
+    padding: 1em;
+    text-align: right;
+    font-size: 1.4em;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+  }
+  .menu-toggle:hover {
+    background: #4e6137;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #607744;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+  nav a {
+    color: white;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  nav a:hover {
+    background-color: #4e6137;
+  }
+  nav.active {
+    max-height: 500px;
+    opacity: 1;
+  }
+  @media (min-width: 769px) {
+    .menu-toggle {
+      display: none;
+    }
+    nav {
+      display: flex !important;
+      max-height: none;
+      opacity: 1 !important;
+    }
+  }
+</style>
+<script>
+  function toggleMenu() {
+    var nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+  }
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<style>
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .language-switcher {
+    padding: 1em;
+    text-align: right;
+    font-size: 0.9em;
+  }
+  header, nav {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+  nav a {
+    color: white;
+    padding: 0.5em;
+    display: inline-block;
+    text-decoration: none;
+  }
+  nav a:hover {
+    background-color: #444;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  main {
+    padding: 1em;
+  }
+  @media (max-width: 600px) {
+    nav {
+      font-size: 0.9em;
+    }
+    .language-switcher {
+      font-size: 0.8em;
+    }
+  }
+</style>
+
+    <meta http-equiv="refresh" content="0; url=index.html">
+    <title>Yönlendiriliyor...</title>
+  </head>
+  <body>
+<div class="hero" style="background-image: url('hero.jpg'); background-size: cover; background-position: center center; color: white; padding: 80px 20px; text-align: center;">
+  <h1 style="font-size: 3em; margin-bottom: 0.5em;">Kuleyzen'e Hoş Geldiniz</h1>
+  <p style="font-size: 1.5em; margin-bottom: 1.5em;">Hatay bölgesinden gelen kaliteli, organik zeytinyağını keşfedin.</p>
+  <a href="iletisim.html" style="padding: 12px 30px; background-color: #607744; color: white; text-decoration: none; font-size: 1.2em; border-radius: 4px;">Şimdi Sipariş Ver</a>
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰ Menü</div>
+    <p>Ana sayfaya yönlendiriliyorsunuz...</p>
+  </body>
+</html>
