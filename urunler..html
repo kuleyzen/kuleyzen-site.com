@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafaf5;
+    color: #2f2f2f;
+  }
+  .menu-toggle {
+    display: none;
+    background: #607744;
+    color: white;
+    padding: 1em;
+    text-align: right;
+    font-size: 1.4em;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+  }
+  .menu-toggle:hover {
+    background: #4e6137;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #607744;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+  nav a {
+    color: white;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  nav a:hover {
+    background-color: #4e6137;
+  }
+  nav.active {
+    max-height: 500px;
+    opacity: 1;
+  }
+  @media (min-width: 769px) {
+    .menu-toggle {
+      display: none;
+    }
+    nav {
+      display: flex !important;
+      max-height: none;
+      opacity: 1 !important;
+    }
+  }
+</style>
+<script>
+  function toggleMenu() {
+    var nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+  }
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<style>
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .language-switcher {
+    padding: 1em;
+    text-align: right;
+    font-size: 0.9em;
+  }
+  header, nav {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+  nav a {
+    color: white;
+    padding: 0.5em;
+    display: inline-block;
+    text-decoration: none;
+  }
+  nav a:hover {
+    background-color: #444;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  main {
+    padding: 1em;
+  }
+  @media (max-width: 600px) {
+    nav {
+      font-size: 0.9em;
+    }
+    .language-switcher {
+      font-size: 0.8em;
+    }
+  }
+</style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ürünlerimiz - Kuleyzen</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    nav {
+      background-color: #4a5534;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #4a5534;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #4a5534;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+<div class="hero" style="background-image: url('hero.jpg'); background-size: cover; background-position: center center; color: white; padding: 80px 20px; text-align: center;">
+  <h1 style="font-size: 3em; margin-bottom: 0.5em;">Kuleyzen'e Hoş Geldiniz</h1>
+  <p style="font-size: 1.5em; margin-bottom: 1.5em;">Hatay bölgesinden gelen kaliteli, organik zeytinyağını keşfedin.</p>
+  <a href="iletisim.html" style="padding: 12px 30px; background-color: #607744; color: white; text-decoration: none; font-size: 1.2em; border-radius: 4px;">Şimdi Sipariş Ver</a>
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰ Menü</div>
+<div id="google_translate_element" style="text-align: right; padding: 10px;"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {pageLanguage: 'tr', includedLanguages: 'de,en,nl,fr,es,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+      'google_translate_element'
+    );
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<div class="language-switcher" style="text-align: right; font-size: 0.9em; margin: 10px;">
+  <a href="urunler.html">🇹🇷</a> |
+  <a href="products-en.html">🇬🇧</a> |
+  <a href="producten-nl.html">🇳🇱</a>
+</div>
+
+  <nav>
+    <a href="start.html">Ana Sayfa</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="urunler.html">Ürünlerimiz</a>
+    <a href="zeytin-hakkinda-bilgi.html">Zeytin Hakkında Bilgi</a>
+    <a href="iletisim.html">İletişim</a>
+  </nav>
+  
+<main>
+  <h2 style="text-align: center; color: #4a5534;">Ürünlerimiz</h2>
+  <div class="product-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+    <div class="product" style="background: white; border-radius: 8px; padding: 20px; max-width: 280px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <img src="zeytinyagi_750ml.jpg" alt="0,75L Cam Şişe Zeytinyağı" style="max-width: 100%; border-radius: 6px;">
+      <h3>0,75L Cam Şişe Zeytinyağı</h3>
+      <p>Fiyat: 750 TL</p>
+      <a href="iletisim.html" style="display:inline-block;padding:10px 20px;background:#607744;color:white;text-decoration:none;border-radius:4px;">Şimdi Sipariş Ver</a>
+    </div>
+    <div class="product" style="background: white; border-radius: 8px; padding: 20px; max-width: 280px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <img src="zeytinyagi_5l_single.jpg" alt="5L Teneke Zeytinyağı" style="max-width: 100%; border-radius: 6px;">
+      <h3>5L Teneke Zeytinyağı (Tek)</h3>
+      <p>Fiyat: 2800 TL</p>
+      <a href="iletisim.html" style="display:inline-block;padding:10px 20px;background:#607744;color:white;text-decoration:none;border-radius:4px;">Şimdi Sipariş Ver</a>
+    </div>
+    <div class="product" style="background: white; border-radius: 8px; padding: 20px; max-width: 280px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <img src="zeytinyagi_5l_bundle.jpg" alt="5L Teneke Zeytinyağı (2'li Paket)" style="max-width: 100%; border-radius: 6px;">
+      <h3>5L Teneke Zeytinyağı (2'li Paket)</h3>
+      <p>Fiyat: 5000 TL</p>
+      <a href="iletisim.html" style="display:inline-block;padding:10px 20px;background:#607744;color:white;text-decoration:none;border-radius:4px;">Şimdi Sipariş Ver</a>
+    </div>
+    <div class="product" style="background: white; border-radius: 8px; padding: 20px; max-width: 280px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <img src="nar_eksi.jpg" alt="Nar Ekşisi" style="max-width: 100%; border-radius: 6px;">
+      <h3>0,75L Nar Ekşisi</h3>
+      <p>Fiyat: 750 TL</p>
+      <a href="iletisim.html" style="display:inline-block;padding:10px 20px;background:#607744;color:white;text-decoration:none;border-radius:4px;">Şimdi Sipariş Ver</a>
+    </div>
+  </div>
+</main>
+
+  <footer>
+    <p>&copy; 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
+  </footer>
+</body>
+</html>
