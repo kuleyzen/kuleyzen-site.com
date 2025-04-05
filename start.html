@@ -114,6 +114,28 @@
 <title>Yönlendiriliyor...</title>
 <style>
     body { margin: 0; font-family: Arial, sans-serif; }
+
+    /* Desktop-Navigation */
+    .desktop-menu {
+        background-color: #607744;
+        display: flex;
+        gap: 20px;
+        padding: 15px;
+        justify-content: center;
+    }
+
+    .desktop-menu a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .desktop-menu a:hover {
+        text-decoration: underline;
+    }
+
+    /* Mobil-Menü Toggle */
     .menu-toggle {
         background-color: #607744;
         color: white;
@@ -121,41 +143,53 @@
         font-size: 20px;
         cursor: pointer;
         display: none;
-        z-index: 999;
-        position: relative;
     }
-    .menu {
-        display: flex;
-        gap: 15px;
+
+    /* Mobil-Menü Links */
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
         background-color: #ffffff;
         padding: 10px 15px;
-        flex-wrap: wrap;
-        z-index: 999;
-        position: relative;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .menu a {
+
+    .mobile-menu a {
         text-decoration: none;
         color: #222;
         font-weight: bold;
         padding: 10px;
         font-size: 18px;
     }
+
+    /* Sichtbarkeit für Mobilgeräte */
     @media screen and (max-width: 768px) {
-        .menu {
+        .desktop-menu {
             display: none;
-            flex-direction: column;
         }
-        .menu.show {
-            display: flex;
-        }
+
         .menu-toggle {
             display: block;
         }
+
+        .mobile-menu.show {
+            display: flex;
+        }
     }
-    </style></head>
-<body>
-<div class="menu" id="mainMenu"><a href="anasayfa.html">Anasayfa</a><a href="urunler.html">Ürünler</a><a href="urunlerimizin-uretimi.html">Üretim Süreci</a><a href="zeytin-hakkinda-bilgi.html">Zeytin Hakkında</a><a href="nar-hakkinda-bilgi.html">Nar Ekşisi</a><a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a></div><div class="hero" style="background-image: url('hero.jpg'); background-size: cover; background-position: center center; color: white; padding: 80px 20px; text-align: center;">
+
+    @media screen and (min-width: 769px) {
+        .mobile-menu, .menu-toggle {
+            display: none;
+        }
+    }
+    </style>
+<!-- GoatCounter Analytics -->
+<script data-goatcounter="https://kuleyzen.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body><div class="desktop-menu"><a href="anasayfa.html">Anasayfa</a><a href="urunler.html">Ürünler</a><a href="urunlerimizin-uretimi.html">Üretim Süreci</a><a href="zeytin-hakkinda-bilgi.html">Zeytin Hakkında</a><a href="nar-hakkinda-bilgi.html">Nar Ekşisi</a><a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a></div><div class="menu-toggle" onclick="toggleMenu()">☰ Menü</div><div class="mobile-menu" id="mainMenu"><a href="anasayfa.html">Anasayfa</a><a href="urunler.html">Ürünler</a><a href="urunlerimizin-uretimi.html">Üretim Süreci</a><a href="zeytin-hakkinda-bilgi.html">Zeytin Hakkında</a><a href="nar-hakkinda-bilgi.html">Nar Ekşisi</a><a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a></div>
+<div class="hero" style="background-image: url('hero.jpg'); background-size: cover; background-position: center center; color: white; padding: 80px 20px; text-align: center;">
 <h1 style="font-size: 3em; margin-bottom: 0.5em;">Kuleyzen'e Hoş Geldiniz</h1>
 <p style="font-size: 1.5em; margin-bottom: 1.5em;">Hatay bölgesinden gelen kaliteli, organik zeytinyağını keşfedin.</p>
 <a href="iletisim.html" style="padding: 12px 30px; background-color: #607744; color: white; text-decoration: none; font-size: 1.2em; border-radius: 4px;">Şimdi Sipariş Ver</a>
