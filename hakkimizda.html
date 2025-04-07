@@ -5,6 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kuleyzen - Doğal Zeytinyağı</title>
 <style>
+  body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fafaf5;
+      color: #2f2f2f;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-bottom: 60px;
+    }
+    .section img {
+      flex: 1 1 300px;
+      max-width: 300px;
+      margin-right: 30px;
+      border-radius: 8px;
+    }
+    .section div {
+      flex: 2 1 400px;
+    }
+    h2, h3 {
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+      }
+      .section img {
+        margin: 0 0 20px 0;
+        max-width: 100%;
+      }
+    }
+   img {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
    body {
     font-family: sans-serif;
     margin: 0;
@@ -161,12 +206,61 @@ body {
   </div>
 </header>
 
+
 <main>
-<h2>Hakkımızda</h2>
-<p>Kuleyzen, Hatay Altınözü'nde, zeytinin anavatanında doğmuş bir aile işletmesidir. Sahipleri <strong><a href="mailto:eris@kuleyzen.com">Eriş Çelikel</a></strong> ve <strong><a href="mailto:pinar@kuleyzen.com">Pınar Coşkun</a></strong>, geleneksel yöntemlerle organik tarım yaparak kaliteli zeytinyağı üretimini tutkuyla sürdürmektedir.</p>
-<p>Tüm üretim süreci, zeytinlerin toplanmasından sıkımına, depolanmasına ve şişelenmesine kadar kendi denetimlerinde gerçekleşir. İşletme ayrıca sadık yardımcıları olan köpekleri <strong>Panço</strong> ve kedileri <strong>Luna</strong> ile birlikte doğayla iç içe bir üretim modeli benimsemektedir.</p>
-<p>50 dönümlük arazide yetişen atalık zeytin türleriyle, sadece soğuk sıkım ve filtreli üretim yapılır. Kuleyzen zeytinyağı, sınırlı üretimi ve yüksek kalitesiyle sofralara ulaşır.</p>
-</main>
+    <h2>Neden Kuleyzen?</h2>
+    <p>Kuleyzen yalnızca bir marka adı değil — bir yerin, bir geleneğin ve bir yaşam biçiminin adıdır. Bugün resmi olarak <strong>Kalınsan mevkii</strong> olarak anılsa da, halk arasında hâlâ eski ismiyle bilinir: <strong>Kuleyzen</strong>. Bu küçük yerleşim, Tokaclı köyünün hemen yanı başında, çoğunlukla <strong>Çelikel sülalesinin</strong> yaşadığı, zeytin ağaçlarının gölgelediği bir yerdir.</p>
+    <p>İsmini, bu topraklarda hep birlikte yaşayan Hristiyan ve Müslüman halkların kurduğu dostluk bağından alır. “Kuleyzen” sözcüğü, Arapça “kul” (iyi) ve “eyzen” (iyi insan) kelimelerinin birleşiminden oluşur. Rivayete göre, Hristiyan köylüler Müslüman komşuları için bu adı kullanırmış: iyi insanlar. Biz de bu mirası sahipleniyor ve Kuleyzen’in ruhunu yaşatıyoruz — doğaya, emeğe ve komşuluğa saygı ile.</p>
+
+    <h3>Bir Ağacın İzinde</h3>
+    <div class="section">
+      <img src="durmus-celikel.jpg" alt="Dedemiz Durmuş Ağa">
+      <div>
+        <p>Bu topraklarla kurduğumuz bağ, yalnızca ürünle değil, geçmişle ve aileyle de örülüdür. Çelikel ailesinin Tokaclı’daki varlığı, hafızalarda başlangıcı olmayan bir geçmiş gibi, hep oradaydı. Zeytin ağacı bu ailenin içinde hep vardı — gölge veren, besleyen, öğreten.</p>
+        <p>Ailenin bugünkü çiftliğini şekillendiren kişi, Eris Çelikel’in dedesi <strong>Durmuş Çelikel</strong> oldu. 1940’ların sonunda, ailesinin arazisinde yüzlerce zeytin ağacının çoğunu bizzat eliyle dikti. Ona göre zeytincilik yalnızca bir iş değil, doğayla kurulan derin bir dostluktu.</p>
+        <p><strong>Durmuş Ağa</strong>’nın gösterdiği bu yol, sonraki kuşaklar için bir pusula oldu. Zeytine duyulan saygı, ağaca gösterilen özen ve emeğin kutsallığı, Kuleyzen’in karakterine dönüştü.</p>
+      </div>
+    </div>
+
+    <h3>Nilüfer’in Yolculuğu</h3>
+    <div class="section">
+      <img src="nilufer-celikel.jpg" alt="Nilüfer Çelikel zeytinlikte">
+      <div>
+        <p>2010 yılında, Durmuş Ağa artık işleri devretmeye hazır olduğunda, çiftliği gelini <strong>Nilüfer Çelikel</strong> üstlendi. Nilüfer Hanım’ın yolu başta topraktan çok uzaktı. O kendini hep şehirli biri olarak tanımlardı ve kendi sözleriyle: “Buraya gelmeden önce zeytini sadece sofrada, toprağı sadece saksıda bilirdim.”</p>
+        <p>Ancak 1979’da, eşi Mehmet Çelikel’le Tokaclı’ya yaptığı ilk ziyaret her şeyi değiştirdi. Zeytin ağaçlarının duruşu, köyün kokusu ve doğanın dinginliği ona derinden dokundu. Yıllar sonra çiftliğin başına geçtiğinde bu bağ yeniden canlandı.</p>
+        <p>Nilüfer, bu yaklaşımı tersine çevirmeye karar verdi. Eşsiz bir özveriyle çiftliği yeniden yapılandırdı, toprağa saygıyı merkeze aldı. Kayınpederi Durmuş Ağa’dan öğrendiklerini modern yöntemlerle birleştirerek çiftliği organik üretime yöneltti.</p>
+      </div>
+    </div>
+
+    <h3>Ata Toprağına Dönüş</h3>
+    <div class="section">
+      <img src="eris-celikel.jpg" alt="Eris Çelikel zeytinlikte">
+      <div>
+        <p><strong>Eris Çelikel</strong>, 1980 yılında İstanbul’da doğdu. Henüz beş yaşındayken ailesiyle birlikte İsviçre’ye taşındı. Orada büyüdü, eğitim aldı ve hayata atıldı. 2007’de Türkiye’ye döndü ve tıpkı annesi gibi, toprağa uzaktan bakan biriydi.</p>
+        <p>Kurumsal dünyada, büyük şehirlerde, uluslararası projelerde çalıştı. Bir süreliğine Güney Afrika’da yaşadı. Ancak içinde bir şey eksikti. 2015 yılında, bu eksikliği anlamlandırmak için büyük bir karar aldı: beyaz yakalı hayatına veda etti ve ailesinin çiftliğini devraldı.</p>
+        <p>Ziraat hakkında neredeyse hiçbir şey bilmiyordu. Bu yüzden hemen ikinci üniversitesine başladı: 2016’da Ziraat Mühendisliği (Bitki Koruma) okumaya koyuldu. Toprakla tanıştıkça, çocukken gölgesinde oynadığı ağaçlarla bağı derinleşti.</p>
+      </div>
+    </div>
+
+    <h3>Birlikte Üreten Bir Hayat</h3>
+    <div class="section">
+      <img src="eris-pinar.jpg" alt="Eris ve Pınar birlikte">
+      <div>
+        <p>2019 yılında hayatına <strong>Pınar Coşkun</strong> girdi. Pınar, 1986’da İstanbul’da doğmuş, henüz üç yaşındayken ailesiyle birlikte Hollanda’ya taşınmıştı. Genç yaşta çok uluslu şirketlerde çalışmaya başlamış, dünya çapında bir kariyer inşa etmişti.</p>
+        <p>2014 yılında Türkiye’ye geri dönse de, işleri gereği uzun süre yurt dışında yaşamaya devam etti. 2022 yılında çiftliği birlikte yönetmeye başladılar. Bugün Kuleyzen, bu iki farklı dünyanın uyumlu birleşimiyle hayat buluyor.</p>
+        <p>Onlara köpekleri <strong>Panço</strong> ve beyaz Pers kedileri <strong>Luna</strong> da eşlik ediyor. Ailece kurdukları bu düzen, doğaya saygılı, insana sıcak ve emeğe odaklı bir yaşam biçiminin ifadesi oldu.</p>
+      </div>
+    </div>
+
+    <h3>Kuleyzen Çiftliği</h3>
+    <div class="section">
+      <img src="zeytinlik-gunes.jpg" alt="Zeytinlikte gün batımı">
+      <div>
+        <p>Kuleyzen, geleneksel yöntemlerle organik tarım yaparak, soğuk sıkım ve filtreli üretimle zeytinyağını özenle üreten bir aile çiftliğidir. Her zeytin tanesi, üç kuşağın bilgeliği, emeği ve sevgisiyle işlenir. Tüm üretim süreci, zeytinlerin toplanmasından sıkımına, depolanmasından şişelenmesine kadar kendi ellerimizdedir.</p>
+        <p>Biz bu işi sadece zeytinyağı üretmek için değil; geçmişe saygı, bugüne emek ve geleceğe umut bırakmak için yapıyoruz.</p>
+      </div>
+    </div>
+  </main>
 <footer style="text-align: center; padding: 20px; background-color: #4a5534; color: white;">
   <p>© 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
 </footer>
