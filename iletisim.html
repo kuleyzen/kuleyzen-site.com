@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuleyzen - Doğal Zeytinyağı</title>
+  
+<style>
+ body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;}
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafaf5;
+    color: #2f2f2f;
+  }
+main {
+    padding: 1em;
+  }  
+  main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+  .main-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #607744;
+  }
+  main {
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    main {
+    padding: 1em;
+  }
+
+  .main-nav > li {
+    position: relative;
+  }
+
+  .main-nav > li > a {
+    display: block;
+    padding: 1em 1.5em;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .main-nav > li > a:hover {
+    background-color: #4e6137;
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #607744;
+    z-index: 9999;
+    min-width: 180px;
+  }
+
+  .has-submenu:hover .submenu {
+    display: block;
+  }
+
+  .submenu li a {
+    display: block;
+    padding: 0.75em 1.5em;
+    color: white;
+    text-decoration: none;
+  }
+
+  .submenu li a:hover {
+    background-color: #4e6137;
+  }
+
+  .menu-toggle {
+    display: none;
+    background: #607744;
+    color: white;
+    padding: 1em;
+    font-size: 1.4em;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    text-align: right;
+  }
+
+  @media (max-width: 768px) {
+    .main-nav {
+      flex-direction: column;
+      align-items: flex-start;
+      display: none;
+    }
+
+    .main-nav.show {
+      display: flex;
+    }
+
+    .submenu {
+      position: static;
+      display: none;
+      padding-left: 2em;
+    }
+
+    .has-submenu:hover .submenu {
+      display: block;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+  }
+</style>
+
+  <!-- Übersetzer -->
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {pageLanguage: 'tr', includedLanguages: 'de,en,nl,fr,es,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+        'google_translate_element'
+      );
+    }
+  </script>
+</head>
+<body>
+
+<div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('open')">☰ Menü</div>
+
+<nav>
+  <ul class="main-nav">
+    <li><a href="index.html">Anasayfa</a></li>
+    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="urunler.html">Ürünler</a></li>
+    <li class="has-submenu">
+      <a href="urunlerimizin-uretimi.html">Üretim Süreci</a>
+      <ul class="submenu">
+        <li><a href="zeytin-hakkinda-bilgi.html">Zeytin Hakkında</a></li>
+        <li><a href="nar-hakkinda-bilgi.html">Nar Ekşisi</a></li>
+      </ul>
+    </li>
+    <li><a href="iletisim.html">İletişim</a></li>
+  </ul>
+
+<main>
+<h2>Bizimle İletişime Geçin</h2>
+
+<form name="contact" method="POST" data-netlify="true" action="/tesekkurler.html" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+  <label for="name" style="font-weight: bold;">Adınız:</label>
+  <input id="name" name="name" required type="text" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"/>
+  
+  <label for="email" style="font-weight: bold;">E-posta:</label>
+  <input id="email" name="email" required type="email" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"/>
+  
+  <label for="message" style="font-weight: bold;">Mesajınız:</label>
+  <textarea id="message" name="message" required rows="6" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"></textarea>
+  
+  <label for="antispam" style="font-weight: bold;">Spam koruması: 3 + 2 = ?</label>
+  <input id="antispam" name="antispam" required type="text" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 20px; box-sizing: border-box;"/>
+  
+  <button type="submit" style="width: 100%; padding: 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Gönder</button>
+  <a href="https://wa.me/905362419158" style="padding: 12px 30px; background-color: #25D366; color: white; text-decoration: none; font-size: 1.2em; border-radius: 4px; margin-top: 20px; display: inline-block;">Bizimle WhatsApp üzerinden sohbet edin</a>
+</form>
+
+</main>
+<footer style="text-align: center; padding: 20px; background-color: #4a5534; color: white;">
+  <p>© 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
+</footer>
+
+<!-- Menü-Script -->
+<script>
+  function toggleMenu() {
+    var nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+  }
+</script>
+
+<!-- GoatCounter Analytics -->
+<script data-goatcounter="https://kuleyzen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".main-nav");
+    if (toggle && nav) {
+      toggle.addEventListener("click", function () {
+        nav.classList.toggle("show");
+      });
+    }
+  });
+</script>
+</body>
+</html>

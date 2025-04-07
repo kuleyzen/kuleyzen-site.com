@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuleyzen - Doğal Zeytinyağı</title>
+  
+<style>
+  main {
+    padding: 1em;
+  }  
+  main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+  .main-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #607744;
+  }
+
+  .main-nav > li {
+    position: relative;
+  }
+
+  .main-nav > li > a {
+    display: block;
+    padding: 1em 1.5em;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .main-nav > li > a:hover {
+    background-color: #4e6137;
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #607744;
+    z-index: 9999;
+    min-width: 180px;
+  }
+
+  .has-submenu:hover .submenu {
+    display: block;
+  }
+
+  .submenu li a {
+    display: block;
+    padding: 0.75em 1.5em;
+    color: white;
+    text-decoration: none;
+  }
+
+  .submenu li a:hover {
+    background-color: #4e6137;
+  }
+
+  .menu-toggle {
+    display: none;
+    background: #607744;
+    color: white;
+    padding: 1em;
+    font-size: 1.4em;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    text-align: right;
+  }
+
+  @media (max-width: 768px) {
+    .main-nav {
+      flex-direction: column;
+      align-items: flex-start;
+      display: none;
+    }
+
+    .main-nav.show {
+      display: flex;
+    }
+
+    .submenu {
+      position: static;
+      display: none;
+      padding-left: 2em;
+    }
+
+    .has-submenu:hover .submenu {
+      display: block;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+  }
+</style>
+
+  <!-- Übersetzer -->
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {pageLanguage: 'tr', includedLanguages: 'de,en,nl,fr,es,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+        'google_translate_element'
+      );
+    }
+  </script>
+</head>
+<body>
+
+<div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('open')">☰ Menü</div>
+
+<nav>
+  <ul class="main-nav">
+    <li><a href="index.html">Anasayfa</a></li>
+    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="urunler.html">Ürünler</a></li>
+    <li class="has-submenu">
+      <a href="urunlerimizin-uretimi.html">Üretim Süreci</a>
+      <ul class="submenu">
+        <li><a href="zeytin-hakkinda-bilgi.html">Zeytin Hakkında</a></li>
+        <li><a href="nar-hakkinda-bilgi.html">Nar Ekşisi</a></li>
+      </ul>
+    </li>
+    <li><a href="iletisim.html">İletişim</a></li>
+  </ul>
+</nav>
+<main>
+<h1> ürünlerimizin üretimi </h1>
+<section>
+<h2>İyi Bir Zeytinyağı Nasıl Olmalı?</h2>
+<p>Gerçek bir zeytinyağını anlamak, sadece şişeye bakmakla olmaz. Kaliteli bir zeytinyağı; kokusuyla, tadıyla, üretim şekliyle ve saklama koşullarıyla kendini belli eder. Kuleyzen zeytinyağı, Hatay’ın bereketli topraklarında yetişen yerli zeytin çeşitlerinden üretilir. Hem geleneksel yöntemleri, hem de özenle uygulanan modern teknikleri bir araya getiririz. Ama bir zeytinyağını iyi yapan sadece üretim değil, onun taşıdığı doğallık, tazelik ve karakterdir.</p>
+<p>İyi bir zeytinyağı, burnunuza gelen ilk kokuda meyvemsiliğiyle kendini gösterir. Taze yeşil ot, domates sapı ya da badem gibi notalar hissedilir. Bu aromalar, zeytinin zamanında toplandığını ve dikkatle işlendiğini gösterir. Damakta ise hafif bir acılık ve boğazda kısa süren yakıcılık hissi oluşur – zeytinin doğal antioksidanları olan fenolik bileşiklerin güçlü varlığını gösteren değerli işaretlerdir. Ne kadar belirginse, o kadar doğaldır ve o kadar faydalıdır.</p>
+<p>Kuleyzen’de zeytinler özenle toplanır ve en geç 24 saat içinde, 27 dereceyi aşmayan “soğuk sıkım” yöntemiyle sıkılır. Bu yöntem, hem lezzetin hem de besin değerlerinin korunmasını sağlar. Elde edilen yağ, paslanmaz çelik tanklarda dinlendirilir, ardından kâğıt filtre ile berraklaştırılır ve ışık geçirmeyen koyu cam şişelere ya da 5 litrelik tenekelere doldurulur. Tüm süreç, kimyasal katkı maddesi kullanılmadan, doğal ve hijyenik koşullarda yürütülür.</p>
+<p>Kuleyzen’de her üretim, kaliteye olan bağlılığımızı ve şeffaflığımızı yansıtır. Etiketimizde yazan her bilgi, arkasında duran emeği, bilgiyi ve aile değerlerini temsil eder. Çünkü bizce zeytinyağı sadece bir gıda değil, aynı zamanda bir kültürdür. Sofranıza gelen her damla, bu toprakların ve emeğin sadık bir yansımasıdır.</p>
+<h2>Üretim Sürecimiz</h2>
+<p>Kuleyzen zeytinyağı, yalnızca toprağımızdan değil, aynı zamanda emeğimizden, sabrımızdan ve birbirimize olan güvenimizden doğar. Üretim sürecimiz; doğaya saygılı, zamana duyarlı ve hiçbir aşaması tesadüfe bırakılmayan bir öyküdür.</p>
+<p>Hasat zamanı geldiğinde, ağaçlarımızın altına geniş brandalar serilir. Deneyimli hasatçılarımız, Campagnola’nın hafif ve verimli titreşimli toplama cihazlarını kullanarak olgun zeytinleri dallarından nazikçe ayırır. Zeytinler yere düşerken beraberinde birkaç yaprak da gelir – bu bizim için önemlidir. Çünkü yapraklar sayesinde zeytinler havadar kalır. Ayrıca, zeytinler <strong>çuvallara konmaz</strong>, bunun yerine kasalara alınır; bu detay <strong>fermantasyonu önlemek</strong> açısından çok kritiktir. Toplandıktan sonra <strong>en fazla 4 saat</strong> içinde sıkıma ulaşırlar – böylece kalite ve tazelik korunur.</p>
+<p>Toplanan zeytinler havadar kasalarda taşınır ve Kuleyzen’e ait Koçamaz MiniOlive taş değirmeninde aynı gün içinde işlenir. Bu modern ama nazik sistem, zeytinin aromasını, besin değerlerini ve karakterini koruyarak en saf halini çıkarır. İlk aşamada elde edilen yağ, yüksek konili bir krom tankta birkaç gün dinlenmeye alınır. Bu sayede meyve eti ve sudan gelen kalıntılar dibe çöker ve temiz yağ üstte kalır.</p>
+<p>Ardından zeytinyağımız özel kâğıt filtreden geçirilir. Bu işlem, yağın berraklaşmasını sağlarken hiçbir faydalı içeriği kaybettirmez. Temizlenmiş ve dinlendirilmiş yağ, yine krom paslanmaz çelikten yapılmış özel tanklarda, güneş ışığından uzak, serin bir ortamda saklanır.</p>
+<p>Bize sipariş ulaştığında, şişeleme işlemi başlar. Ne büyük makineler, ne de soğuk bant sistemleri… Bizde her şişe, her teneke, elle doldurulur. Çünkü küçük bir işletmeyiz ve işimizi büyük bir ciddiyetle yaparız. Her damlayı kendimiz tüketir gibi hazırlarız – çünkü zaten öyle yapıyoruz.</p>
+<p>Kuleyzen zeytinyağı, bir üretim değil bir paylaşım sürecidir. Biz ailece bu sürecin her aşamasına dâhiliz – tarlada da, tankın başında da, kargonun önünde de… Ve şuna inanıyoruz: Gerçek zeytinyağı, sadece zeytinden değil, güvenilir insanların ellerinden doğar.</p>
+<section>
+<h2>Saurani Zeytini</h2>
+<p>Hatay'a özgü, aromatik ve acı karakterli bir çeşittir. Soğuk sıkımda yüksek kalite verir.</p>
+</section>
+<section>
+<h2>Karamani Zeytini</h2>
+<p>Küçük taneli, yoğun aromalı, dengeli ve hafif acılı bir yağ üretir.</p>
+</section>
+<section>
+<h2>Habese Zeytini</h2>
+<p>Nadir, karakteristik aromaya sahip, baharatlı ve meyvemsidir.</p>
+</section>
+<section>
+<h2>Halhali Zeytini</h2>
+<p>Yumuşak içimli, düşük yakıcılı ve hafif meyvemsi bir profil sunar.</p>
+</section>
+</section></main>
+<footer style="text-align: center; padding: 20px; background-color: #4a5534; color: white;">
+  <p>© 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
+</footer>
+
+<!-- Menü-Script -->
+<script>
+  function toggleMenu() {
+    var nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+  }
+</script>
+
+<!-- GoatCounter Analytics -->
+<script data-goatcounter="https://kuleyzen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".main-nav");
+    if (toggle && nav) {
+      toggle.addEventListener("click", function () {
+        nav.classList.toggle("show");
+      });
+    }
+  });
+</script>
+</body>
+</html>
