@@ -159,27 +159,53 @@ main {
     <li><a href="iletisim.html">İletişim</a></li>
   </ul>
 
-<main>
-<h2>Bizimle İletişime Geçin</h2>
-
-<form name="contact" method="POST" data-netlify="true" action="/tesekkurler.html" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-  <label for="name" style="font-weight: bold;">Adınız:</label>
-  <input id="name" name="name" required type="text" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"/>
+  <main style="max-width: 1000px; margin: auto;">
+    <h2>Bizimle İletişime Geçin</h2>
   
-  <label for="email" style="font-weight: bold;">E-posta:</label>
-  <input id="email" name="email" required type="email" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"/>
+    <form name="contact" method="POST" data-netlify="true" action="/tesekkurler.html" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <div style="flex: 1;">
+          <label for="name" style="font-weight: bold;">Adınız:</label>
+          <input id="name" name="name" required type="text" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"/>
+        </div>
+        <div style="flex: 1;">
+          <label for="email" style="font-weight: bold;">E-posta:</label>
+          <input id="email" name="email" required type="email" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"/>
+        </div>
+      </div>
   
-  <label for="message" style="font-weight: bold;">Mesajınız:</label>
-  <textarea id="message" name="message" required rows="6" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"></textarea>
+      <label for="message" style="font-weight: bold;">Mesajınız:</label>
+      <textarea id="message" name="message" required rows="4" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"></textarea>
+    
+      <label for="antispam" style="font-weight: bold;">Spam koruması: 3 + 2 = ?</label>
+      <input id="antispam" name="antispam" required type="text" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 20px; box-sizing: border-box;"/>
+    
+      <button type="submit" style="width: 100%; padding: 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Gönder</button>
+      <a href="https://wa.me/905362419158" style="padding: 12px 30px; background-color: #25D366; color: white; text-decoration: none; font-size: 1.2em; border-radius: 4px; margin-top: 20px; display: inline-block;">Bizimle WhatsApp üzerinden sohbet edin</a>
+    </form>
   
-  <label for="antispam" style="font-weight: bold;">Spam koruması: 3 + 2 = ?</label>
-  <input id="antispam" name="antispam" required type="text" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 20px; box-sizing: border-box;"/>
+    <h3>Lokasyonumuz</h3>
   
-  <button type="submit" style="width: 100%; padding: 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Gönder</button>
-  <a href="https://wa.me/905362419158" style="padding: 12px 30px; background-color: #25D366; color: white; text-decoration: none; font-size: 1.2em; border-radius: 4px; margin-top: 20px; display: inline-block;">Bizimle WhatsApp üzerinden sohbet edin</a>
-</form>
-
-</main>
+    <!-- Stilvolle Adresse und Karte -->
+    <div style="background-color: #f0f4f1; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+      <p style="font-size: 18px; font-weight: bold; color: #4a5534;">Adresimiz:</p>
+      <a href="https://maps.app.goo.gl/pG2eTyrSVw4ben9H9" target="_blank" style="font-size: 16px; color: #666; line-height: 1.6;">
+        Kalınsan Mv. No: 51<br>
+        Tokaçlı Mahallesi, Altınözü<br>
+        Hatay, Türkiye
+      </a>
+    </div>
+  
+    <!-- Karte -->
+    <div style="width: 100%; height: 300px; border-radius: 8px; overflow: hidden;">
+      <iframe
+        width="100%" height="100%" frameborder="0"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2178.215749421967!2d36.268471529455724!3d36.09056902511684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1str!2str!4v1744020087574!5m2!1str!2str"
+        frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+  
+    <a href="https://maps.app.goo.gl/xdWpps7erXLUNqsRA" target="_blank" style="display: block; text-align: center; margin-top: 15px; font-size: 16px; color: #007bff;">Google Maps'te Görüntüle</a>
+  </main>
 <footer style="text-align: center; padding: 20px; background-color: #4a5534; color: white;">
   <p>© 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
 </footer>
