@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<!-- Seitentitel, Meta-Informationen und eingebettetes CSS -->
+<!-- 💡 Basis-Meta-Tags und Seitentitel -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kuleyzen - Doğal Zeytinyağı</title>
+<!-- 🎨 Eingebettetes CSS-Stylesheet -->
 <style>
+  /* 🌿 Grundlegende Layout- und Farbstile */
   body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #fafaf5;
@@ -13,11 +15,13 @@
       margin: 0;
       padding: 0;
     }
+/* 📄 Hauptbereich-Layout */    
     main {
       padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
     }
+/* 🖼️ Flexbox für Sektionen mit Bild und Text */    
     .section {
       display: flex;
       flex-wrap: wrap;
@@ -33,9 +37,11 @@
     .section div {
       flex: 2 1 400px;
     }
+/* 🧱 Überschriften-Layout */    
     h2, h3 {
       margin-top: 40px;
     }
+/* 📱 Responsive Anpassung für kleine Bildschirme */    
     @media (max-width: 768px) {
       .section {
         flex-direction: column;
@@ -45,37 +51,15 @@
         max-width: 100%;
       }
     }
+/* 📷 Allgemeine Bildformatierung */    
    img {
       width: 100%;
       max-width: 600px;
       margin: 20px 0;
       border-radius: 8px;
     }
-   body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;}
-body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fafaf5;
-    color: #2f2f2f;
-  }
-  main {
-    padding: 1em;
-  }  
-  main {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+  
+/* 🔝 Navigationsleiste (Desktop) */    
   .main-nav {
     list-style: none;
     margin: 0;
@@ -101,7 +85,7 @@ body {
   .main-nav > li > a:hover {
     background-color: #4e6137;
   }
-
+/* 📂 Submenü (Desktop Hover) */
   .submenu {
     display: none;
     position: absolute;
@@ -126,7 +110,7 @@ body {
   .submenu li a:hover {
     background-color: #4e6137;
   }
-
+/* 🍔 Mobile Navigation & Menübutton */
   .menu-toggle {
     display: none;
     background: #607744;
@@ -138,7 +122,7 @@ body {
     width: 100%;
     text-align: right;
   }
-
+/* 📱 Mobile Menü-Stile */
   @media (max-width: 768px) {
     .main-nav {
       flex-direction: column;
@@ -149,7 +133,7 @@ body {
     .main-nav.show {
       display: flex;
     }
-
+ /* 📂 Submenü im mobilen Layout */
     .submenu {
       position: static;
       display: none;

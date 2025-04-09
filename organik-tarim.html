@@ -7,31 +7,59 @@
   <title>Kuleyzen - Doğal Zeytinyağı</title>
 <!-- Eingebettetes CSS für Layout, Farben und Menü -->  
 <style>
- body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+  /* 🌿 Grundlegende Layout- und Farbstile */
   body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fafaf5;
+      color: #2f2f2f;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;}
-body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fafaf5;
-    color: #2f2f2f;
-  }
-main {
-    padding: 1em;
-  }  
-  main {
+      padding: 0;
+    }
+/* 📄 Hauptbereich-Layout */    
+    main {
       padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
     }
+/* 🖼️ Flexbox für Sektionen mit Bild und Text */    
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-bottom: 60px;
+    }
+    .section img {
+      flex: 1 1 300px;
+      max-width: 300px;
+      margin-right: 30px;
+      border-radius: 8px;
+    }
+    .section div {
+      flex: 2 1 400px;
+    }
+/* 🧱 Überschriften-Layout */    
+    h2, h3 {
+      margin-top: 40px;
+    }
+/* 📱 Responsive Anpassung für kleine Bildschirme */    
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+      }
+      .section img {
+        margin: 0 0 20px 0;
+        max-width: 100%;
+      }
+    }
+/* 📷 Allgemeine Bildformatierung */    
+   img {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+  
+/* 🔝 Navigationsleiste (Desktop) */    
   .main-nav {
     list-style: none;
     margin: 0;
@@ -57,7 +85,7 @@ main {
   .main-nav > li > a:hover {
     background-color: #4e6137;
   }
-
+/* 📂 Submenü (Desktop Hover) */
   .submenu {
     display: none;
     position: absolute;
@@ -82,7 +110,7 @@ main {
   .submenu li a:hover {
     background-color: #4e6137;
   }
-
+/* 🍔 Mobile Navigation & Menübutton */
   .menu-toggle {
     display: none;
     background: #607744;
@@ -94,7 +122,7 @@ main {
     width: 100%;
     text-align: right;
   }
-
+/* 📱 Mobile Menü-Stile */
   @media (max-width: 768px) {
     .main-nav {
       flex-direction: column;
@@ -105,7 +133,7 @@ main {
     .main-nav.show {
       display: flex;
     }
-
+ /* 📂 Submenü im mobilen Layout */
     .submenu {
       position: static;
       display: none;
@@ -193,14 +221,13 @@ main {
     <p>Biz bu ağaca sadece verim kaynağı olarak değil, bir dost gibi yaklaşıyoruz. Hasat zamanı geldiğinde bağırmadan, kırmadan, sarsmadan, onunla konuşarak ve teşekkür ederek topluyoruz. Bu yüzden zeytinyağımızda sadece meyvenin değil, emeğin ve saygının da tadı vardır.</p>
   
     <h2>Neden Organik?</h2>
-<p>Çünkü:</p>
-<ul style="margin-left: 20px;">
-  <li>doğaya zarar vermeden üretmek mümkündür.</li>
-  <li>toprağın ömrü bizim ömrümüzden uzundur.</li>
-  <li>gerçek zeytinyağı, katkıya ihtiyaç duymaz.</li>
-  <li>biz çocuklarımıza sadece ürün değil, bir yaşam biçimi bırakmak istiyoruz.</li>
-</ul>
-  
+    <p>Çünkü:</p>
+    <ul style="margin-left: 20px;">
+      <li>doğaya zarar vermeden üretmek mümkündür.</li>
+      <li>toprağın ömrü bizim ömrümüzden uzundur.</li>
+      <li>gerçek zeytinyağı, katkıya ihtiyaç duymaz.</li>
+      <li>biz çocuklarımıza sadece ürün değil, bir yaşam biçimi bırakmak istiyoruz.</li>
+    </ul>
     <p>Organik tarım, bizim için sadece bir yöntem değil; bir duruş, bir yoldur. Toprağa saygı duyan, emeğe değer veren herkes bu yolun doğal parçasıdır.</p>
   </main>
 <!-- Fußzeile mit Copyright -->  
