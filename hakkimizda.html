@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+<!-- Seitentitel, Meta-Informationen und eingebettetes CSS -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kuleyzen - Doğal Zeytinyağı</title>
 <style>
+  body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fafaf5;
+      color: #2f2f2f;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-bottom: 60px;
+    }
+    .section img {
+      flex: 1 1 300px;
+      max-width: 300px;
+      margin-right: 30px;
+      border-radius: 8px;
+    }
+    .section div {
+      flex: 2 1 400px;
+    }
+    h2, h3 {
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+      }
+      .section img {
+        margin: 0 0 20px 0;
+        max-width: 100%;
+      }
+    }
+   img {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
    body {
     font-family: sans-serif;
     margin: 0;
@@ -120,7 +166,7 @@ body {
   }
 </style>
 
-  <!-- Übersetzer -->
+  <!-- Sprachumschalter (Google Translate) -->
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
     function googleTranslateElementInit() {
@@ -132,9 +178,9 @@ body {
   </script>
 </head>
 <body>
-
-<div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('open')">☰ Menü</div>
-
+<!-- Hamburger-Menü für mobile Ansicht -->
+  <div class="menu-toggle">☰ Menü</div>
+<!-- Hauptnavigation -->
 <nav>
   <ul class="main-nav">
     <li><a href="index.html">Anasayfa</a></li>
@@ -143,16 +189,18 @@ body {
     <li class="has-submenu">
       <a href="urunlerimizin-uretimi.html">Üretim Süreci</a>
       <ul class="submenu">
+        <li><a href="organik-tarim.html">Organik Tarım</a></li>
         <li><a href="zeytin-hakkinda-bilgi.html">Zeytin Hakkında</a></li>
         <li><a href="nar-hakkinda-bilgi.html">Nar Ekşisi</a></li>
       </ul>
     </li>
-    <li><a href="iletisim.html">İletişim</a></li>
+    <li><a href="sss.html">Sıkça Sorulan Sorular</a></li>
+       <li><a href="iletisim.html">İletişim</a></li>
   </ul>
 </nav>
-
+<!-- Sprachumschalter-Container -->
 <div id="google_translate_element" style="text-align: right; padding: 10px;"></div>
-
+<!-- Hero-Bereich mit Bild und Einstiegstext -->
 <header>
   <div class="hero" style="background-image: url('hero.jpg'); background-size: cover; background-position: center center; color: white; padding: 80px 20px; text-align: center;">
     <h1 style="font-size: 3em; margin-bottom: 0.5em;">Kuleyzen'e Hoş Geldiniz</h1>
@@ -161,28 +209,25 @@ body {
   </div>
 </header>
 
+<!-- Hauptinhalt: Geschichte von Kuleyzen -->
 <main>
-<h2>Hakkımızda</h2>
-<p>Kuleyzen, Hatay Altınözü'nde, zeytinin anavatanında doğmuş bir aile işletmesidir. Sahipleri <strong><a href="mailto:eris@kuleyzen.com">Eriş Çelikel</a></strong> ve <strong><a href="mailto:pinar@kuleyzen.com">Pınar Coşkun</a></strong>, geleneksel yöntemlerle organik tarım yaparak kaliteli zeytinyağı üretimini tutkuyla sürdürmektedir.</p>
-<p>Tüm üretim süreci, zeytinlerin toplanmasından sıkımına, depolanmasına ve şişelenmesine kadar kendi denetimlerinde gerçekleşir. İşletme ayrıca sadık yardımcıları olan köpekleri <strong>Panço</strong> ve kedileri <strong>Luna</strong> ile birlikte doğayla iç içe bir üretim modeli benimsemektedir.</p>
-<p>50 dönümlük arazide yetişen atalık zeytin türleriyle, sadece soğuk sıkım ve filtreli üretim yapılır. Kuleyzen zeytinyağı, sınırlı üretimi ve yüksek kalitesiyle sofralara ulaşır.</p>
-</main>
+  <h2>Hakkımızda</h2>
+  <p>Kuleyzen, Hatay Altınözü'nde, zeytinin anavatanında doğmuş bir aile işletmesidir. Sahipleri <strong><a href="mailto:eris@kuleyzen.com">Eriş Çelikel</a></strong> ve <strong><a href="mailto:pinar@kuleyzen.com">Pınar Coşkun</a></strong>, geleneksel yöntemlerle organik tarım yaparak kaliteli zeytinyağı üretimini tutkuyla sürdürmektedir.</p>
+  <p>Tüm üretim süreci, zeytinlerin toplanmasından sıkımına, depolanmasına ve şişelenmesine kadar kendi denetimlerinde gerçekleşir. İşletme ayrıca sadık yardımcıları olan köpekleri <strong>Panço</strong> ve kedileri <strong>Luna</strong> ile birlikte doğayla iç içe bir üretim modeli benimsemektedir.</p>
+  <p>50 dönümlük arazide yetişen atalık zeytin türleriyle, sadece soğuk sıkım ve filtreli üretim yapılır. Kuleyzen zeytinyağı, sınırlı üretimi ve yüksek kalitesiyle sofralara ulaşır.</p>
+  </main>
+<!-- Fußzeile mit Copyright -->  
 <footer style="text-align: center; padding: 20px; background-color: #4a5534; color: white;">
   <p>© 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
+  <p>Son güncelleme: <span id="last-updated">yükleniyor...</span></p>
 </footer>
 
-<!-- Menü-Script -->
-<script>
-  function toggleMenu() {
-    var nav = document.querySelector('nav');
-    nav.classList.toggle('active');
-  }
-</script>
+
 
 <!-- GoatCounter Analytics -->
 <script data-goatcounter="https://kuleyzen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
-
+<!-- JavaScript zur Steuerung des mobilen Menüs -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const toggle = document.querySelector(".menu-toggle");
@@ -193,6 +238,26 @@ body {
       });
     }
   });
+</script>
+<!-- JavaScript letztes update github -->
+<script>
+  fetch("https://api.github.com/repos/kuleyzen/test.test.test/commits/main")
+    .then(res => {
+      if (!res.ok) throw new Error("Veri alınamadı");
+      return res.json();
+    })
+    .then(data => {
+      const date = new Date(data.commit.author.date);
+      const formatted = date.toLocaleString("tr-TR", {
+        dateStyle: "short",
+        timeStyle: "short"
+      });
+      document.getElementById("last-updated").textContent = formatted;
+    })
+    .catch(err => {
+      console.error("Son güncelleme alınamadı:", err);
+      document.getElementById("last-updated").textContent = "bilgi alınamadı";
+    });
 </script>
 </body>
 </html>

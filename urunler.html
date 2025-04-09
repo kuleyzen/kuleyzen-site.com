@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+<!-- Seitentitel, Meta-Tags und eingebettetes CSS -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kuleyzen - Doğal Zeytinyağı</title>
-  
+ <!-- Eingebettetes CSS für Layout, Navigation und Produktkarten -->  
 <style>
  body {
     font-family: sans-serif;
@@ -133,9 +134,9 @@ main {
   </script>
 </head>
 <body>
-
-<div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('open')">☰ Menü</div>
-
+  <!-- Hamburger-Menü für Mobilgeräte -->
+  <div class="menu-toggle">☰ Menü</div>
+<!-- Hauptnavigation -->
 <nav>
   <ul class="main-nav">
     <li><a href="index.html">Anasayfa</a></li>
@@ -144,16 +145,18 @@ main {
     <li class="has-submenu">
       <a href="urunlerimizin-uretimi.html">Üretim Süreci</a>
       <ul class="submenu">
+        <li><a href="organik-tarim.html">Organik Tarım</a></li>
         <li><a href="zeytin-hakkinda-bilgi.html">Zeytin Hakkında</a></li>
         <li><a href="nar-hakkinda-bilgi.html">Nar Ekşisi</a></li>
       </ul>
     </li>
-    <li><a href="iletisim.html">İletişim</a></li>
+    <li><a href="sss.html">Sıkça Sorulan Sorular</a></li>
+       <li><a href="iletisim.html">İletişim</a></li>
   </ul>
 </nav>
-
+<!-- Sprachumschalter-Bereich -->
 <div id="google_translate_element" style="text-align: right; padding: 10px;"></div>
-
+ <!-- Hero-Bereich mit Begrüßung und CTA -->
 <header>
   <div class="hero" style="background-image: url('hero.jpg'); background-size: cover; background-position: center center; color: white; padding: 80px 20px; text-align: center;">
     <h1 style="font-size: 3em; margin-bottom: 0.5em;">Kuleyzen'e Hoş Geldiniz</h1>
@@ -161,27 +164,32 @@ main {
     <a href="iletisim.html" style="padding: 12px 30px; background-color: #607744; color: white; text-decoration: none; font-size: 1.2em; border-radius: 4px;">Şimdi Sipariş Ver</a>
   </div>
 </header>
+
 <main>
 <h2 style="text-align: center; color: #4a5534;">Ürünlerimiz</h2>
 <div class="product-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
-<div class="product" style="background: white; border-radius: 8px; padding: 20px; max-width: 280px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<!-- Produkt 1: 0,75L Cam Şişe -->
+  <div class="product" style="background: white; border-radius: 8px; padding: 20px; max-width: 280px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
 <img alt="0,75L Cam Şişe Zeytinyağı" src="zeytinyagi_750ml.jpg" style="max-width: 100%; border-radius: 6px;"/>
 <h3>0,75L Cam Şişe Zeytinyağı</h3>
 <p>Fiyat: 750 TL</p>
 <a href="iletisim.html" style="display:inline-block;padding:10px 20px;background:#607744;color:white;text-decoration:none;border-radius:4px;">Şimdi Sipariş Ver</a>
 </div>
+<!-- Produkt 2: 5L Teneke -->
 <div class="product" style="background: white; border-radius: 8px; padding: 20px; max-width: 280px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
 <img alt="5L Teneke Zeytinyağı" src="zeytinyagi_5l_single.jpg" style="max-width: 100%; border-radius: 6px;"/>
 <h3>5L Teneke Zeytinyağı (Tek)</h3>
 <p>Fiyat: 2800 TL</p>
 <a href="iletisim.html" style="display:inline-block;padding:10px 20px;background:#607744;color:white;text-decoration:none;border-radius:4px;">Şimdi Sipariş Ver</a>
 </div>
+<!-- Produkt 3: 5L x2 Paket -->
 <div class="product" style="background: white; border-radius: 8px; padding: 20px; max-width: 280px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
 <img alt="5L Teneke Zeytinyağı (2'li Paket)" src="zeytinyagi_5l_bundle.jpg" style="max-width: 100%; border-radius: 6px;"/>
 <h3>5L Teneke Zeytinyağı (2'li Paket)</h3>
 <p>Fiyat: 5000 TL</p>
 <a href="iletisim.html" style="display:inline-block;padding:10px 20px;background:#607744;color:white;text-decoration:none;border-radius:4px;">Şimdi Sipariş Ver</a>
 </div>
+<!-- Produkt 4: Nar Ekşisi -->
 <div class="product" style="background: white; border-radius: 8px; padding: 20px; max-width: 280px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
 <img alt="Nar Ekşisi" src="nar_eksi.jpg" style="max-width: 100%; border-radius: 6px;"/>
 <h3>0,75L Nar Ekşisi</h3>
@@ -190,22 +198,19 @@ main {
 </div>
 </div>
 </main>
+
+<!-- Fußzeile mit Copyright -->  
 <footer style="text-align: center; padding: 20px; background-color: #4a5534; color: white;">
   <p>© 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
+  <p>Son güncelleme: <span id="last-updated">yükleniyor...</span></p>
 </footer>
 
-<!-- Menü-Script -->
-<script>
-  function toggleMenu() {
-    var nav = document.querySelector('nav');
-    nav.classList.toggle('active');
-  }
-</script>
+
 
 <!-- GoatCounter Analytics -->
 <script data-goatcounter="https://kuleyzen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
-
+ <!-- JavaScript: Menüfunktion für Mobilgeräte -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const toggle = document.querySelector(".menu-toggle");
@@ -216,6 +221,26 @@ main {
       });
     }
   });
+</script>
+<!-- JavaScript letztes update github -->
+<script>
+  fetch("https://api.github.com/repos/kuleyzen/test.test.test/commits/main")
+    .then(res => {
+      if (!res.ok) throw new Error("Veri alınamadı");
+      return res.json();
+    })
+    .then(data => {
+      const date = new Date(data.commit.author.date);
+      const formatted = date.toLocaleString("tr-TR", {
+        dateStyle: "short",
+        timeStyle: "short"
+      });
+      document.getElementById("last-updated").textContent = formatted;
+    })
+    .catch(err => {
+      console.error("Son güncelleme alınamadı:", err);
+      document.getElementById("last-updated").textContent = "bilgi alınamadı";
+    });
 </script>
 </body>
 </html>
