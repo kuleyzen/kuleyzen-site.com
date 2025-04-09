@@ -99,40 +99,23 @@
   .has-submenu:hover .submenu {
     display: block;
   }
+/* 🛠️ Submenü Hintergrundfarbe und Hover-Korrektur */
+.submenu li a {
+  display: block;
+  padding: 0.75em 1.5em;
+  color: white;
+  text-decoration: none;
+  background-color: #607744; /* ← das kann fehlen */
+  line-height: 1.4; /* optional: reduziert unnötige Höhe */
+}
 
-  .submenu li a {
-    display: block;
-    padding: 0.75em 1.5em;
-    color: white;
-    text-decoration: none;
-  }
+.submenu li a:hover {
+  background-color: #4e6137;
+}
 
-  .submenu li a:hover {
-    background-color: #4e6137;
-  }
-/* 🍔 Mobile Navigation & Menübutton */
-  .menu-toggle {
-    display: none;
-    background: #607744;
-    color: white;
-    padding: 1em;
-    font-size: 1.4em;
-    cursor: pointer;
-    border: none;
-    width: 100%;
-    text-align: right;
-  }
-/* 📱 Mobile Menü-Stile */
-  @media (max-width: 768px) {
-    .main-nav {
-      flex-direction: column;
-      align-items: flex-start;
-      display: none;
-    }
 
-    .main-nav.show {
-      display: flex;
-    }
+
+    
  /* 📂 Submenü im mobilen Layout */
     .submenu {
       position: static;
@@ -144,10 +127,15 @@
       display: block;
     }
 
-    .menu-toggle {
-      display: block;
-    }
+    
+  
+
+/* 📵 Bottom-Menü nur auf Mobilgeräten anzeigen */
+@media (min-width: 769px) {
+  .bottom-nav {
+    display: none;
   }
+}
 
 /* 🧭 Kategorie-Kacheln auf der FAQ-Seite */
 .category-grid {
@@ -285,6 +273,391 @@ details p {
   transform: scale(1.1);
   color: #2f2f2f;
 }
+/* 🧭 Kategorie-Kacheln auf der FAQ-Seite */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.2em;
+  margin: 2em 0;
+  max-width: 900px;
+  margin: 2em auto;
+}
+
+.category-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.2em 0.8em;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.category-box .icon {
+  font-size: 2em;
+  margin-bottom: 0.4em;
+}
+
+.category-box .label {
+  font-size: 1em;
+  font-weight: bold;
+}
+/* 🔍 Suchfeld für FAQ-Seite */
+#faq-search {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto 2.5em;
+  padding: 1em;
+  font-size: 1em;
+  border-radius: 8px;
+  border: 2px solid #607744;
+  box-shadow: 0 0 0 3px rgba(96, 119, 68, 0.1);
+  transition: all 0.2s ease;
+}
+
+#faq-search:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(96, 119, 68, 0.25);
+}
+/* 📦 FAQ Akkordeon-Stil */
+details {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 1.5em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+summary {
+  padding: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+  font-size: 1.05em;
+  color: #222;
+}
+
+summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.2em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #999;
+  transition: 0.2s ease;
+}
+
+details[open] summary {
+  color: #607744;
+  background-color: #f1f5f1;
+}
+
+details[open] summary::after {
+  content: "–";
+  color: #607744;
+}
+
+details p {
+  padding: 0 1.5em 1.2em;
+  margin: 0;
+  font-size: 1em;
+  color: #444;
+}
+/* 🎮 Nintendo-Style Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #607744;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  z-index: 999;
+}
+
+.bottom-nav a,
+.bottom-nav button {
+  background-color: #4e6137;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 1.2em;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.bottom-nav button:hover,
+.bottom-nav a:hover {
+  background-color: #eef1ea;
+  transform: scale(1.1);
+  color: #2f2f2f;
+}
+/* 📦 Akkordeon aktive Buttons */
+.accordion-button.active {
+  background-color: #f1f5f1;
+  color: #607744;
+}
+.accordion-button::after {
+  content: "+";
+  position: absolute;
+  right: 1.2em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #999;
+  transition: 0.2s ease;
+}
+.accordion-button.active::after {
+  content: "–";
+  color: #607744;
+}
+/* 📚 Akkordeon-Button-Stil für FAQ */
+.accordion-button {
+  background-color: #fff;
+  color: #2f2f2f;
+  padding: 1.2em;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 0.5em 0;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+.accordion-button:hover {
+  background-color: #f1f5f1;
+}
+
+.accordion-button.active {
+  background-color: #f1f5f1;
+  color: #607744;
+}
+
+.accordion-button::after {
+  content: "+";
+  float: right;
+  font-size: 1.2em;
+  transition: transform 0.2s ease;
+}
+
+.accordion-button.active::after {
+  content: "–";
+  color: #607744;
+}
+
+/* 📘 Akkordeon-Inhalt */
+.accordion-panel {
+  display: none;
+  padding: 1em 1.5em;
+  border-left: 4px solid #607744;
+  background-color: #fcfcf9;
+  margin-bottom: 1em;
+  border-radius: 0 8px 8px 0;
+  color: #444;
+}
+/* 🎮 Nintendo-Style Bottom Navigation (Mobil) */
+.bottom-grid {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #607744;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 2px;
+  padding: 10px;
+  z-index: 999;
+}
+
+.bottom-grid button {
+  background-color: #4e6137;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 5px;
+  font-size: 1.3em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.bottom-grid button span {
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+.bottom-grid button:hover {
+  background-color: #eef1ea;
+  color: #2f2f2f;
+  transform: scale(1.05);
+}
+
+/* 📵 Nur auf Mobilgeräten anzeigen */
+@media (min-width: 769px) {
+  .bottom-grid {
+    display: none;
+  }
+}
+/* 📜 Hauptnavigation: mobil horizontal scrollfähig */
+@media (max-width: 768px) {
+  .main-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0.5em 0;
+    scrollbar-width: none; /* Firefox */
+    background-color: #607744;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .main-nav > li {
+    display: inline-block;
+    margin: 0;
+    flex: 0 0 auto;  /* 👈 Ergänzt */
+    scroll-snap-align: start;
+  }
+
+  .main-nav > li > a {
+    white-space: nowrap;
+    display: inline-block;  /* 👈 Ergänzt */
+    padding: 1em 1.2em;
+  }
+}
+/* 🎮 Nintendo-Style Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #607744;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  z-index: 999;
+}
+
+.bottom-nav a {
+  background-color: #4e6137;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 1.2em;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.bottom-nav a:hover {
+  background-color: #eef1ea;
+  transform: scale(1.1);
+  color: #2f2f2f;
+}
+
+/* 📵 Bottom-Menü nur auf Mobil anzeigen */
+@media (min-width: 769px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+/* 🦶 Platz für Footer sichtbar unter Bottom-Menü */
+body {
+  padding-bottom: 80px; /* Genug Platz für .bottom-nav */
+}
+/* 🎮 Vereinfachte Bottom Navigation (mobil): Nur 3 Felder */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #607744;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  z-index: 999;
+}
+
+.bottom-nav a,
+.bottom-nav button {
+  background-color: #4e6137;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 1.3em;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.bottom-nav a:hover,
+.bottom-nav button:hover {
+  background-color: #eef1ea;
+  transform: scale(1.1);
+  color: #2f2f2f;
+}
+
+/* 👀 Nur auf Mobilgeräten anzeigen */
+@media (min-width: 769px) {
+  .bottom-nav,
+  .mobile-kacheln {
+    display: none;
+  }
+}
+
+/* 📦 Kachelmenü bei Klick auf Hamburger */
+.mobile-kacheln {
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #f5f5f0;
+  padding: 1em;
+  z-index: 998;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-kacheln .box {
+  display: inline-block;
+  background: #fff;
+  padding: 0.8em 1em;
+  margin: 0.3em;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 0.95em;
+  font-weight: bold;
+  color: #2f2f2f;
+  text-decoration: none;
+}
 </style>
 
   <!-- Übersetzer -->
@@ -299,8 +672,7 @@ details p {
   </script>
 </head>
 <body>
-<!-- Hamburger-Menü für Mobilgeräte -->
-  <div class="menu-toggle">☰ Menü</div>
+
   <!-- Hauptnavigation -->
 <nav>
   <ul class="main-nav">
@@ -321,27 +693,54 @@ details p {
 </nav>
  <!-- Hauptinhalt: FAQ-Bereich -->
 <main>
+<!-- 🔍 Suchfeld für FAQ -->
+<input type="text" id="faq-search" placeholder="Sorular arasında ara..." />  
   <h1>Merak Ettikleriniz</h1>
   <p>Aşağıda Kuleyzen Çiftliği ürünleri, üretim süreci, organik tarım anlayışımız ve sipariş süreciyle ilgili sıkça sorulan soruların yanıtlarını bulabilirsiniz.</p>
-<!-- Akkordeon-Komponente mit Fragen und Antworten -->
+
+<!-- 📦 Kategorie-Auswahl als Kacheln -->
+<div class="category-grid">
+  <a href="#zeytin" class="category-box">
+    <div class="icon">🫒</div>
+    <div class="label">Zeytin Hakkında</div>
+  </a>
+  <a href="#organik" class="category-box">
+    <div class="icon">🌿</div>
+    <div class="label">Organik Tarım</div>
+  </a>
+  <a href="#siparis" class="category-box">
+    <div class="icon">🚚</div>
+    <div class="label">Sipariş</div>
+  </a>
+  <a href="#saklama" class="category-box">
+    <div class="icon">🧴</div>
+    <div class="label">Ambalaj</div>
+  </a>
+  <a href="#ciftlik" class="category-box">
+    <div class="icon">🧑‍🌾</div>
+    <div class="label">Çiftlik</div>
+  </a>
+</div>
+
+  <!-- Akkordeon-Komponente mit Fragen und Antworten -->
 <div class="accordion">
 
   <!-- 🫒 Zeytinyağı Hakkında -->
-
+  <div id="zeytin"></div>
   <!-- 🫒Soru 1 -->
-  <button class="accordion-button">🫒 Soru 1: Zeytinyağınız gerçekten soğuk sıkım mı?</button>
+  <button class="accordion-button">🫒 Zeytinyağınız gerçekten soğuk sıkım mı?</button>
   <div class="accordion-panel">
       <p>Evet. Zeytinlerimiz hasattan en geç 4 saat içinde, 27°C’yi geçmeyecek şekilde soğuk sıkım yöntemiyle işlenir.</p>
   </div>
 
   <!-- 🫒Soru 2 -->
-  <button class="accordion-button">🫒 Soru 2: Zeytinyağınızın asit oranı nedir?</button>
+  <button class="accordion-button">🫒 Zeytinyağınızın asit oranı nedir?</button>
   <div class="accordion-panel">
       <p>Genellikle 0.3–0.6 aralığındadır. Her yıl yapılan analiz sonuçlarını isteyen müşterilerimizle paylaşmaktan memnuniyet duyarız.</p>
   </div>
 
   <!-- 🫒Soru 3 -->
-  <button class="accordion-button">🫒 Soru 3: Güzel zeytinyağı nasıl olmalı?</button>
+  <button class="accordion-button">🫒 Güzel zeytinyağı nasıl olmalı?</button>
   <div class="accordion-panel">
       <p>
           Güzel bir zeytinyağı, taze meyvemsi aroması, dengeli acılığı ve hafif yakıcılığı ile öne çıkar.
@@ -353,15 +752,15 @@ details p {
   </div>
 
   <!-- 🫒Soru 4 -->
-  <button class="accordion-button">🫒 Soru 4: Acılık ve yakıcılık normal mi?</button>
+  <button class="accordion-button">🫒 Acılık ve yakıcılık normal mi?</button>
   <div class="accordion-panel">
       <p>Evet. Bu, yüksek fenolik bileşik içerdiğinin ve kaliteli sızma zeytinyağı olduğunun göstergesidir.</p>
   </div>
 
   <!-- 🌿 Organik Tarım ve Üretim -->
-
+  <div id="organik"></div>
 <!-- 🌿Soru 1 -->
-<button class="accordion-button">🌿 Soru 1: Gerçekten organik misiniz?</button>
+<button class="accordion-button">🌿 Gerçekten organik misiniz?</button>
 <div class="accordion-panel">
     <p>
         Evet. <a href="http://www.eko-tar.com/" target="_blank">Ekotar</a> tarafından denetleniyoruz ve 
@@ -373,13 +772,13 @@ details p {
 </div>
 
   <!-- 🌿Soru 2 -->
-  <button class="accordion-button">🌿 Soru 2: Zararlılarla nasıl mücadele ediyorsunuz?</button>
+  <button class="accordion-button">🌿 Zararlılarla nasıl mücadele ediyorsunuz?</button>
   <div class="accordion-panel">
       <p>Feromon tuzakları, mekanik temizlik ve doğal dengeyi koruma yöntemleriyle mücadele ediyoruz. Kimyasal ilaç kullanmıyoruz.</p>
   </div>
 
   <!-- 🌿Soru 3 -->
-  <button class="accordion-button">🌿 Soru 3: Feromon tuzakları nedir?</button>
+  <button class="accordion-button">🌿 Feromon tuzakları nedir?</button>
   <div class="accordion-panel">
       <p>
           Feromon tuzakları, zararlı böceklerin doğal üreme sinyallerini taklit ederek onları cezbeden, çevre dostu tuzaklardır.
@@ -389,15 +788,15 @@ details p {
   </div>
 
   <!-- 🌿Soru 4 -->
-  <button class="accordion-button">🌿 Soru 4: Zeytinlerinizi nasıl topluyorsunuz?</button>
+  <button class="accordion-button">🌿 Zeytinlerinizi nasıl topluyorsunuz?</button>
   <div class="accordion-panel">
       <p>Zeytinlerimiz Kasım ayında, ağaca zarar vermeyen makinelerle ve yerel iş gücüyle, bez serilerek toplanır. Aynı gün işlenir.</p>
   </div>
 
   <!-- 🚚 Sipariş ve Teslimat -->
-
+  <div id="siparis"></div>
   <!-- 🚚Soru 1 -->
-  <button class="accordion-button">🚚 Soru 1: Nasıl sipariş verebilirim?</button>
+  <button class="accordion-button">🚚 Nasıl sipariş verebilirim?</button>
   <div class="accordion-panel">
       <p>
           Şu anda <a href="iletisim.html">iletişim</a> sayfamız üzerinden sipariş alıyoruz.
@@ -406,9 +805,9 @@ details p {
   </div>
 
   <!-- 🧴 Saklama ve Ambalaj -->
-
+  <div id="saklama"></div>
   <!-- 🧴Soru 1 -->
-  <button class="accordion-button">🧴 Soru 1: Zeytinyağınız donarsa bozulur mu?</button>
+  <button class="accordion-button">🧴 Zeytinyağınız donarsa bozulur mu?</button>
   <div class="accordion-panel">
       <p>
           Zeytinyağının donması doğal bir durumdur. Ancak uzun süre donuk kalırsa, tadında ve yapısında hafif değişiklikler olabilir.
@@ -417,7 +816,7 @@ details p {
   </div>
 
   <!-- 🧴Soru 2 -->
-  <button class="accordion-button">🧴 Soru 2: Zeytinyağı nasıl muhafaza edilmeli?</button>
+  <button class="accordion-button">🧴 Zeytinyağı nasıl muhafaza edilmeli?</button>
   <div class="accordion-panel">
       <p>
           Zeytinyağı doğrudan ışık ve ısıdan korunmalıdır. En ideal saklama şekli koyu renkli cam şişeler veya metal tenekelerdir.
@@ -428,7 +827,7 @@ details p {
   </div>
 
   <!-- 🧴Soru 3 -->
-  <button class="accordion-button">🧴 Soru 3: Neden şeffaf şişe olmaz?</button>
+  <button class="accordion-button">🧴 Neden şeffaf şişe olmaz?</button>
   <div class="accordion-panel">
       <p>
           Şeffaf şişeler ışığı geçirir ve bu durum zeytinyağının yapısında bozulmalara neden olabilir.
@@ -438,7 +837,7 @@ details p {
   </div>
 
   <!-- 🧴Soru 4 -->
-  <button class="accordion-button">🧴 Soru 4: Neden PET şişelerde saklanmaz?</button>
+  <button class="accordion-button">🧴 Neden PET şişelerde saklanmaz?</button>
   <div class="accordion-panel">
       <p>
           PET şişeler zamanla zeytinyağı ile kimyasal tepkimeye girebilir ve plastiğin yapısındaki zararlı maddeler yağa geçebilir.
@@ -449,9 +848,9 @@ details p {
   </div>
 
   <!-- 🧑‍🌾 Çiftlik ve Üretim Süreci -->
-
+  <div id="ciftlik"></div>
   <!-- 🧑‍🌾Soru 1 -->
-  <button class="accordion-button">🧑‍🌾 Soru 1: Bu işi kaç kişilik bir ekip yapıyor?</button>
+  <button class="accordion-button">🧑‍🌾 Bu işi kaç kişilik bir ekip yapıyor?</button>
   <div class="accordion-panel">
       <p>
           Aile içinde yürütüyoruz. Hasat zamanı yerel çalışanlarla iş gücümüz genişliyor ama tüm süreçler bizim elimizden geçiyor.
@@ -459,7 +858,7 @@ details p {
   </div>
 
   <!-- 🧑‍🌾Soru 2 -->
-  <button class="accordion-button">🧑‍🌾 Soru 2: Üretimi dışarıya yaptırıyor musunuz?</button>
+  <button class="accordion-button">🧑‍🌾 Üretimi dışarıya yaptırıyor musunuz?</button>
   <div class="accordion-panel">
       <p>
           Hayır. Tüm üretim çiftliğimizde, kendi makinelerimizle ve kendi gözetimimizde gerçekleşir.
@@ -467,7 +866,7 @@ details p {
   </div>
 
   <!-- 🧑‍🌾Soru 3 -->
-  <button class="accordion-button">🧑‍🌾 Soru 3: Çiftliğinizi ziyaret edebilir miyiz?</button>
+  <button class="accordion-button">🧑‍🌾 Çiftliğinizi ziyaret edebilir miyiz?</button>
   <div class="accordion-panel">
       <p>
           Tabii ki! <a href="iletisim.html">İletişim</a> sayfamızdan önceden haber verdiğiniz sürece sizi memnuniyetle ağırlamak isteriz.
@@ -476,6 +875,28 @@ details p {
 
 </div>
 </main>
+<!-- 🎮 Vereinfachtes Bottom-Menü (mobil) -->
+<div class="bottom-nav">
+  <a href="iletisim.html" title="İletişim">📩</a>
+  <button onclick="toggleMenu()">☰</button>
+  <a href="sss.html" title="Sıkça Sorulan Sorular">🔍</a>
+</div>
+
+<!-- 📦 Mobile Kachelmenü -->
+<div class="mobile-kacheln" id="mobileKacheln">
+  <a class="box" href="index.html">Anasayfa</a>
+  <a class="box" href="hakkimizda.html">Hakkımızda</a>
+  <a class="box" href="urunler.html">Ürünler</a>
+  <a class="box" href="urunlerimizin-uretimi.html" onclick="toggleSubKacheln(event)">Üretim Süreci</a>
+  <!-- 👇 Untermenü: wird per JS eingeblendet -->
+  <div id="subKacheln" style="display:none; margin-top: 0.5em;">
+    <a class="box" href="organik-tarim.html">Organik Tarım</a>
+    <a class="box" href="zeytin-hakkinda-bilgi.html">Zeytin</a>
+    <a class="box" href="nar-hakkinda-bilgi.html">Nar Ekşisi</a>
+  </div>
+  <a class="box" href="sss.html">Sıkça Sorulan Sorular</a>
+</div>
+
 <!-- Fußzeile mit Copyright -->  
 <footer style="text-align: center; padding: 20px; background-color: #4a5534; color: white;">
   <p>© 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
@@ -486,32 +907,30 @@ details p {
 
 <!-- GoatCounter Analytics -->
 <script data-goatcounter="https://kuleyzen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<!-- JavaScript: Akkordeon-Logik -->
+<!-- JavaScript: Akkordeon-Logik mit Plus/Minus -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const buttons = document.querySelectorAll(".accordion-button");
+
     buttons.forEach(button => {
       button.addEventListener("click", () => {
         const panel = button.nextElementSibling;
-        const isOpen = panel.style.display === "block";
+        const isOpen = button.classList.contains("active");
+
+        // Alle schließen
+        document.querySelectorAll(".accordion-button").forEach(btn => btn.classList.remove("active"));
         document.querySelectorAll(".accordion-panel").forEach(p => p.style.display = "none");
-        if (!isOpen) panel.style.display = "block";
+
+        // Falls nicht offen, dieses öffnen
+        if (!isOpen) {
+          button.classList.add("active");
+          panel.style.display = "block";
+        }
       });
     });
   });
 </script>
-<!-- JavaScript: Hamburger-Menü für Mobilgeräte -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".main-nav");
-    if (toggle && nav) {
-      toggle.addEventListener("click", function () {
-        nav.classList.toggle("show");
-      });
-    }
-  });
-</script>
+
 <!-- JavaScript letztes update github -->
 <script>
   fetch("https://api.github.com/repos/kuleyzen/test.test.test/commits/main")
@@ -531,6 +950,29 @@ details p {
       console.error("Son güncelleme alınamadı:", err);
       document.getElementById("last-updated").textContent = "bilgi alınamadı";
     });
+</script>
+<!-- 📜 Bottom-Navigation Logik -->
+<script>
+  function goTo(url) {
+    window.location.href = url;
+  }
+
+  function toggleMenu() {
+    const menu = document.getElementById("mobileKacheln");
+    const submenu = document.getElementById("subKacheln");
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+      submenu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  }
+
+  function toggleSubKacheln(event) {
+    event.preventDefault();
+    const sub = document.getElementById("subKacheln");
+    sub.style.display = sub.style.display === "block" ? "none" : "block";
+  }
 </script>
 </body>
 </html>
