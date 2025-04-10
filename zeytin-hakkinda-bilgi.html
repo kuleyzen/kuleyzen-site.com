@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+<!-- Seitentitel, Meta-Angaben und eingebettetes CSS -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kuleyzen - Doğal Zeytinyağı</title>
-  
+<!-- Eingebettetes CSS für Layout und Design -->   
 <style>
   /* 🌿 Grundlegende Layout- und Farbstile */
   body {
@@ -112,29 +113,68 @@
   background-color: #4e6137;
 }
 
+/* 🖱️ Submenü Hover-Effekt (nur Desktop, verhindert Zeilenverbreiterung) */
+@media (min-width: 769px) {
+  .has-submenu {
+    position: relative;
+  }
+  .main-nav > li {
+    position: relative;
+  }
+  .main-nav > li > a {
+    line-height: 1.2;
+  }
 
-    
+  .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #607744;
+    display: none;
+    min-width: 180px;
+    z-index: 999;
+  }
+
+  .has-submenu:hover > .submenu {
+    display: block;
+  }
+
+  .submenu li a {
+    display: block;
+    padding: 0.75em 1.5em;
+    color: white;
+    background-color: #607744;
+    text-decoration: none;
+    line-height: 1.4;
+  }
+
+  .submenu li a:hover {
+    background-color: #4e6137;
+  }
+}
+
  /* 📂 Submenü im mobilen Layout */
-    .submenu {
-      position: static;
-      display: none;
-      padding-left: 2em;
-    }
+ @media (max-width: 768px) {
+  .submenu {
+    position: static;
+    display: none;
+    padding-left: 2em;
+  }
 
-    .has-submenu:hover .submenu {
-      display: block;
-    }
+  .has-submenu:hover .submenu {
+    display: block;
+  }
+}
 
-    
-  
+
 /* 📵 Bottom-Menü nur auf Mobilgeräten anzeigen */
 @media (min-width: 769px) {
   .bottom-nav {
     display: none;
   }
-} 
-/* 🎮 Nintendo-Style Bottom Navigation (Mobil) */
-.bottom-grid {
+}
+    /* 🎮 Nintendo-Style Bottom Navigation (Mobil) */
+    .bottom-grid {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -317,41 +357,30 @@ body {
   text-decoration: none;
 }
 </style>
-
-  <!-- Übersetzer -->
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {pageLanguage: 'tr', includedLanguages: 'de,en,nl,fr,es,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
-        'google_translate_element'
-      );
-    }
-  </script>
 </head>
 <body>
 
-  <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('open')">☰ Menü</div>
-  
-  <nav>
-    <ul class="main-nav">
-      <li><a href="index.html">Anasayfa</a></li>
-      <li><a href="hakkimizda.html">Hakkımızda</a></li>
-      <li><a href="urunler.html">Ürünler</a></li>
-      <li class="has-submenu">
-        <a href="urunlerimizin-uretimi.html">Üretim Süreci</a>
-        <ul class="submenu">
-          <li><a href="organik-tarim.html">Organik Tarım</a></li>
-          <li><a href="zeytin-hakkinda-bilgi.html">Zeytin Hakkında</a></li>
-          <li><a href="nar-hakkinda-bilgi.html">Nar Ekşisi</a></li>
-        </ul>
-      </li>
-      <li><a href="sss.html">Sıkça Sorulan Sorular</a></li>
-         <li><a href="iletisim.html">İletişim</a></li>
-    </ul>
-  </nav>
+<!-- Hauptnavigation -->
+<nav>
+  <ul class="main-nav">
+    <li><a href="index.html">Anasayfa</a></li>
+    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="urunler.html">Ürünler</a></li>
+    <li class="has-submenu">
+      <a href="urunlerimizin-uretimi.html">Üretim Süreci</a>
+      <ul class="submenu">
+        <li><a href="organik-tarim.html">Organik Tarım</a></li>
+        <li><a href="zeytin-hakkinda-bilgi.html">Zeytin Hakkında</a></li>
+        <li><a href="nar-hakkinda-bilgi.html">Nar Ekşisi</a></li>
+      </ul>
+    </li>
+    <li><a href="sss.html">Sıkça Sorulan Sorular</a></li>
+    <li><a href="iletisim.html">İletişim</a></li>
+  </ul>
+</nav>
+<!-- Hauptinhalt: Beschreibung der Nar Ekşisi Produktion -->
 <main>
-<h1> ürünlerimizin üretimi </h1>
+<h1> Zeytin </h1>
 <section>
 <h2>İyi Bir Zeytinyağı Nasıl Olmalı?</h2>
 <p>Gerçek bir zeytinyağını anlamak, sadece şişeye bakmakla olmaz. Kaliteli bir zeytinyağı; kokusuyla, tadıyla, üretim şekliyle ve saklama koşullarıyla kendini belli eder. Kuleyzen zeytinyağı, Hatay’ın bereketli topraklarında yetişen yerli zeytin çeşitlerinden üretilir. Hem geleneksel yöntemleri, hem de özenle uygulanan modern teknikleri bir araya getiririz. Ama bir zeytinyağını iyi yapan sadece üretim değil, onun taşıdığı doğallık, tazelik ve karakterdir.</p>
@@ -381,8 +410,8 @@ body {
 <h2>Halhali Zeytini</h2>
 <p>Yumuşak içimli, düşük yakıcılı ve hafif meyvemsi bir profil sunar.</p>
 </section>
-</section></main>
-
+</section>
+</main>
 <!-- 🎮 Vereinfachtes Bottom-Menü (mobil) -->
 <div class="bottom-nav">
   <a href="iletisim.html" title="İletişim">📩</a>
@@ -404,23 +433,36 @@ body {
   </div>
   <a class="box" href="sss.html">Sıkça Sorulan Sorular</a>
 </div>
+<!-- Fußzeile mit Copyright -->   
 <footer style="text-align: center; padding: 20px; background-color: #4a5534; color: white;">
   <p>© 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
+  <p>Son güncelleme: <span id="last-updated">yükleniyor...</span></p>
 </footer>
 
-<!-- Menü-Script -->
-<script>
-  function toggleMenu() {
-    var nav = document.querySelector('nav');
-    nav.classList.toggle('active');
-  }
-</script>
 
 <!-- GoatCounter Analytics -->
 <script data-goatcounter="https://kuleyzen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
-
-
+<!-- JavaScript letztes update github -->
+<script>
+  fetch("https://api.github.com/repos/kuleyzen/test.test.test/commits/main")
+    .then(res => {
+      if (!res.ok) throw new Error("Veri alınamadı");
+      return res.json();
+    })
+    .then(data => {
+      const date = new Date(data.commit.author.date);
+      const formatted = date.toLocaleString("tr-TR", {
+        dateStyle: "short",
+        timeStyle: "short"
+      });
+      document.getElementById("last-updated").textContent = formatted;
+    })
+    .catch(err => {
+      console.error("Son güncelleme alınamadı:", err);
+      document.getElementById("last-updated").textContent = "bilgi alınamadı";
+    });
+</script>
 <!-- 📜 Bottom-Navigation Logik -->
 <script>
   function goTo(url) {

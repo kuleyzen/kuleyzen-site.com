@@ -113,22 +113,59 @@
   background-color: #4e6137;
 }
 
+/* 🖱️ Submenü Hover-Effekt (nur Desktop, verhindert Zeilenverbreiterung) */
+@media (min-width: 769px) {
+  .has-submenu {
+    position: relative;
+  }
+  .main-nav > li {
+    position: relative;
+  }
+  .main-nav > li > a {
+    line-height: 1.2;
+  }
 
+  .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #607744;
+    display: none;
+    min-width: 180px;
+    z-index: 999;
+  }
 
-    
+  .has-submenu:hover > .submenu {
+    display: block;
+  }
+
+  .submenu li a {
+    display: block;
+    padding: 0.75em 1.5em;
+    color: white;
+    background-color: #607744;
+    text-decoration: none;
+    line-height: 1.4;
+  }
+
+  .submenu li a:hover {
+    background-color: #4e6137;
+  }
+}
+
  /* 📂 Submenü im mobilen Layout */
-    .submenu {
-      position: static;
-      display: none;
-      padding-left: 2em;
-    }
+ @media (max-width: 768px) {
+  .submenu {
+    position: static;
+    display: none;
+    padding-left: 2em;
+  }
 
-    .has-submenu:hover .submenu {
-      display: block;
-    }
+  .has-submenu:hover .submenu {
+    display: block;
+  }
+}
 
-    
-  
 /* 📵 Bottom-Menü nur auf Mobilgeräten anzeigen */
 @media (min-width: 769px) {
   .bottom-nav {
@@ -319,18 +356,6 @@ body {
   text-decoration: none;
 }
 </style>
-
-  <!-- Übersetzer -->
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {pageLanguage: 'tr', includedLanguages: 'de,en,nl,fr,es,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
-        'google_translate_element'
-      );
-    }
-
-  </script>
 </head>
 <body>
 

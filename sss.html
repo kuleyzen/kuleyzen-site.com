@@ -114,21 +114,59 @@
 }
 
 
+/* 🖱️ Submenü Hover-Effekt (nur Desktop, verhindert Zeilenverbreiterung) */
+@media (min-width: 769px) {
+  .has-submenu {
+    position: relative;
+  }
+  .main-nav > li {
+    position: relative;
+  }
+  .main-nav > li > a {
+    line-height: 1.2;
+  }
 
+  .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #607744;
+    display: none;
+    min-width: 180px;
+    z-index: 999;
+  }
+
+  .has-submenu:hover > .submenu {
+    display: block;
+  }
+
+  .submenu li a {
+    display: block;
+    padding: 0.75em 1.5em;
+    color: white;
+    background-color: #607744;
+    text-decoration: none;
+    line-height: 1.4;
+  }
+
+  .submenu li a:hover {
+    background-color: #4e6137;
+  }
+}
+   
     
  /* 📂 Submenü im mobilen Layout */
-    .submenu {
-      position: static;
-      display: none;
-      padding-left: 2em;
-    }
+@media (max-width: 768px) {
+  .submenu {
+    position: static;
+    display: none;
+    padding-left: 2em;
+  }
 
-    .has-submenu:hover .submenu {
-      display: block;
-    }
-
-    
-  
+  .has-submenu:hover .submenu {
+    display: block;
+  }
+}  
 
 /* 📵 Bottom-Menü nur auf Mobilgeräten anzeigen */
 @media (min-width: 769px) {
@@ -137,344 +175,7 @@
   }
 }
 
-/* 🧭 Kategorie-Kacheln auf der FAQ-Seite */
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1.2em;
-  margin: 2em 0;
-  max-width: 900px;
-  margin: 2em auto;
-}
 
-.category-box {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 1.2em 0.8em;
-  text-align: center;
-  text-decoration: none;
-  color: #333;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.category-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-}
-
-.category-box .icon {
-  font-size: 2em;
-  margin-bottom: 0.4em;
-}
-
-.category-box .label {
-  font-size: 1em;
-  font-weight: bold;
-}
-
-/* 🔍 Suchfeld für FAQ-Seite */
-#faq-search {
-  display: block;
-  max-width: 600px;
-  margin: 0 auto 2.5em;
-  padding: 1em;
-  font-size: 1em;
-  border-radius: 8px;
-  border: 2px solid #607744;
-  box-shadow: 0 0 0 3px rgba(96, 119, 68, 0.1);
-  transition: all 0.2s ease;
-}
-
-#faq-search:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(96, 119, 68, 0.25);
-}
-/* 📦 FAQ Akkordeon-Stil */
-details {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 1.5em;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
-  overflow: hidden;
-}
-
-summary {
-  padding: 1.2em;
-  font-weight: 600;
-  cursor: pointer;
-  position: relative;
-  list-style: none;
-  font-size: 1.05em;
-  color: #222;
-}
-
-summary::after {
-  content: "+";
-  position: absolute;
-  right: 1.2em;
-  top: 50%;
-  transform: translateY(-50%);
-  font-weight: bold;
-  font-size: 1.3em;
-  color: #999;
-  transition: 0.2s ease;
-}
-
-details[open] summary {
-  color: #607744;
-  background-color: #f1f5f1;
-}
-
-details[open] summary::after {
-  content: "–";
-  color: #607744;
-}
-
-details p {
-  padding: 0 1.5em 1.2em;
-  margin: 0;
-  font-size: 1em;
-  color: #444;
-}
-/* 🎮 Nintendo-Style Bottom Navigation */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #607744;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px;
-  z-index: 999;
-}
-
-.bottom-nav a,
-.bottom-nav button {
-  background-color: #4e6137;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 1.2em;
-  text-align: center;
-  border: none;
-  text-decoration: none;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.bottom-nav button:hover,
-.bottom-nav a:hover {
-  background-color: #eef1ea;
-  transform: scale(1.1);
-  color: #2f2f2f;
-}
-/* 🧭 Kategorie-Kacheln auf der FAQ-Seite */
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1.2em;
-  margin: 2em 0;
-  max-width: 900px;
-  margin: 2em auto;
-}
-
-.category-box {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 1.2em 0.8em;
-  text-align: center;
-  text-decoration: none;
-  color: #333;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.category-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-}
-
-.category-box .icon {
-  font-size: 2em;
-  margin-bottom: 0.4em;
-}
-
-.category-box .label {
-  font-size: 1em;
-  font-weight: bold;
-}
-/* 🔍 Suchfeld für FAQ-Seite */
-#faq-search {
-  display: block;
-  max-width: 600px;
-  margin: 0 auto 2.5em;
-  padding: 1em;
-  font-size: 1em;
-  border-radius: 8px;
-  border: 2px solid #607744;
-  box-shadow: 0 0 0 3px rgba(96, 119, 68, 0.1);
-  transition: all 0.2s ease;
-}
-
-#faq-search:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(96, 119, 68, 0.25);
-}
-/* 📦 FAQ Akkordeon-Stil */
-details {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 1.5em;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
-  overflow: hidden;
-}
-
-summary {
-  padding: 1.2em;
-  font-weight: 600;
-  cursor: pointer;
-  position: relative;
-  list-style: none;
-  font-size: 1.05em;
-  color: #222;
-}
-
-summary::after {
-  content: "+";
-  position: absolute;
-  right: 1.2em;
-  top: 50%;
-  transform: translateY(-50%);
-  font-weight: bold;
-  font-size: 1.3em;
-  color: #999;
-  transition: 0.2s ease;
-}
-
-details[open] summary {
-  color: #607744;
-  background-color: #f1f5f1;
-}
-
-details[open] summary::after {
-  content: "–";
-  color: #607744;
-}
-
-details p {
-  padding: 0 1.5em 1.2em;
-  margin: 0;
-  font-size: 1em;
-  color: #444;
-}
-/* 🎮 Nintendo-Style Bottom Navigation */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #607744;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px;
-  z-index: 999;
-}
-
-.bottom-nav a,
-.bottom-nav button {
-  background-color: #4e6137;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 1.2em;
-  text-align: center;
-  border: none;
-  text-decoration: none;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.bottom-nav button:hover,
-.bottom-nav a:hover {
-  background-color: #eef1ea;
-  transform: scale(1.1);
-  color: #2f2f2f;
-}
-/* 📦 Akkordeon aktive Buttons */
-.accordion-button.active {
-  background-color: #f1f5f1;
-  color: #607744;
-}
-.accordion-button::after {
-  content: "+";
-  position: absolute;
-  right: 1.2em;
-  top: 50%;
-  transform: translateY(-50%);
-  font-weight: bold;
-  font-size: 1.3em;
-  color: #999;
-  transition: 0.2s ease;
-}
-.accordion-button.active::after {
-  content: "–";
-  color: #607744;
-}
-/* 📚 Akkordeon-Button-Stil für FAQ */
-.accordion-button {
-  background-color: #fff;
-  color: #2f2f2f;
-  padding: 1.2em;
-  font-size: 1.1em;
-  font-weight: bold;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin: 0.5em 0;
-  cursor: pointer;
-  text-align: left;
-  width: 100%;
-  transition: background 0.2s ease;
-}
-
-.accordion-button:hover {
-  background-color: #f1f5f1;
-}
-
-.accordion-button.active {
-  background-color: #f1f5f1;
-  color: #607744;
-}
-
-.accordion-button::after {
-  content: "+";
-  float: right;
-  font-size: 1.2em;
-  transition: transform 0.2s ease;
-}
-
-.accordion-button.active::after {
-  content: "–";
-  color: #607744;
-}
-
-/* 📘 Akkordeon-Inhalt */
-.accordion-panel {
-  display: none;
-  padding: 1em 1.5em;
-  border-left: 4px solid #607744;
-  background-color: #fcfcf9;
-  margin-bottom: 1em;
-  border-radius: 0 8px 8px 0;
-  color: #444;
-}
 /* 🎮 Nintendo-Style Bottom Navigation (Mobil) */
 .bottom-grid {
   position: fixed;
@@ -657,6 +358,213 @@ body {
   font-weight: bold;
   color: #2f2f2f;
   text-decoration: none;
+}
+/* 🧭 Kategorie-Kacheln auf der FAQ-Seite */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.2em;
+  margin: 2em 0;
+  max-width: 900px;
+  margin: 2em auto;
+}
+
+.category-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.2em 0.8em;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.category-box .icon {
+  font-size: 2em;
+  margin-bottom: 0.4em;
+}
+
+.category-box .label {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* 🔍 Suchfeld für FAQ-Seite */
+#faq-search {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto 2.5em;
+  padding: 1em;
+  font-size: 1em;
+  border-radius: 8px;
+  border: 2px solid #607744;
+  box-shadow: 0 0 0 3px rgba(96, 119, 68, 0.1);
+  transition: all 0.2s ease;
+}
+
+#faq-search:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(96, 119, 68, 0.25);
+}
+
+/* 📦 FAQ Akkordeon-Stil */
+details {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 1.5em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+summary {
+  padding: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+  font-size: 1.05em;
+  color: #222;
+}
+
+summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.2em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #999;
+  transition: 0.2s ease;
+}
+
+details[open] summary {
+  color: #607744;
+  background-color: #f1f5f1;
+}
+
+details[open] summary::after {
+  content: "–";
+  color: #607744;
+}
+
+details p {
+  padding: 0 1.5em 1.2em;
+  margin: 0;
+  font-size: 1em;
+  color: #444;
+}
+
+/* 🎮 Nintendo-Style Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #607744;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  z-index: 999;
+}
+
+.bottom-nav a,
+.bottom-nav button {
+  background-color: #4e6137;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 1.2em;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.bottom-nav button:hover,
+.bottom-nav a:hover {
+  background-color: #eef1ea;
+  transform: scale(1.1);
+  color: #2f2f2f;
+}
+
+/* 📦 Akkordeon aktive Buttons */
+.accordion-button.active {
+  background-color: #f1f5f1;
+  color: #607744;
+}
+.accordion-button::after {
+  content: "+";
+  position: absolute;
+  right: 1.2em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #999;
+  transition: 0.2s ease;
+}
+.accordion-button.active::after {
+  content: "–";
+  color: #607744;
+}
+
+/* 📚 Akkordeon-Button-Stil für FAQ */
+.accordion-button {
+  background-color: #fff;
+  color: #2f2f2f;
+  padding: 1.2em;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 0.5em 0;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+.accordion-button:hover {
+  background-color: #f1f5f1;
+}
+
+.accordion-button.active {
+  background-color: #f1f5f1;
+  color: #607744;
+}
+
+.accordion-button::after {
+  content: "+";
+  float: right;
+  font-size: 1.2em;
+  transition: transform 0.2s ease;
+}
+
+.accordion-button.active::after {
+  content: "–";
+  color: #607744;
+}
+
+/* 📘 Akkordeon-Inhalt */
+.accordion-panel {
+  display: none;
+  padding: 1em 1.5em;
+  border-left: 4px solid #607744;
+  background-color: #fcfcf9;
+  margin-bottom: 1em;
+  border-radius: 0 8px 8px 0;
+  color: #444;
 }
 </style>
 
