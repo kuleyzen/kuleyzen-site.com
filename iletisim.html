@@ -356,6 +356,10 @@ body {
   color: #2f2f2f;
   text-decoration: none;
 }
+/* 💅 Abstand für Google reCAPTCHA Box */
+.g-recaptcha {
+  margin-bottom: 1.5em;
+}
 </style>
 
 <!-- Sprachumschalter (Google Translate) -->
@@ -395,8 +399,14 @@ body {
   <main style="max-width: 1000px; margin: auto;">
 <!-- Überschrift -->    
     <h2>Bizimle İletişime Geçin</h2>
- <!-- Kontaktformular mit Netlify -->  
-    <form name="contact" method="POST" data-netlify="true" action="/tesekkurler.html" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+<!-- 🔒 Kontaktformular mit Netlify und Google reCAPTCHA -->
+<form name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-recaptcha="true"
+      action="/tesekkurler.html"
+      style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+
       
 <!-- Name und E-Mail Eingabe -->      
       <div style="display: flex; gap: 20px; flex-wrap: wrap;">
@@ -412,9 +422,8 @@ body {
   
       <label for="message" style="font-weight: bold;">Mesajınız:</label>
       <textarea id="message" name="message" required rows="4" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"></textarea>
-<!-- Spamschutz -->    
-      <label for="antispam" style="font-weight: bold;">Spam koruması: 3 + 2 = ?</label>
-      <input id="antispam" name="antispam" required type="text" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 20px; box-sizing: border-box;"/>
+<!-- 🔲 Google reCAPTCHA Checkbox -->
+<div class="g-recaptcha" data-sitekey="6Lem6BErAAAAAD9nYnMMGjV2CIfDMd7sfbWN5nYt" style="margin: 20px 0;"></div>
 <!-- Absenden-Button mit verzögerung -->    
       <button type="submit" style="width: 100%; padding: 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Gönder</button>
 <!-- WhatsApp-Link -->
@@ -518,5 +527,7 @@ body {
     sub.style.display = sub.style.display === "block" ? "none" : "block";
   }
 </script>
+<!-- 📜 Google reCAPTCHA Skript von Google laden -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
