@@ -440,35 +440,63 @@ form textarea {
 <!-- Überschrift -->    
     <h2>Bizimle İletişime Geçin</h2>
 <!-- 🔒 Kontaktformular mit Netlify und Google reCAPTCHA -->
+<!-- 📝 Kontaktformular (sichtbar) -->
 <form name="contact"
       method="POST"
       data-netlify="true"
       data-netlify-recaptcha="true"
-      action="/tesekkurler.html"
+      netlify-honeypot="bot-field"
+      action="tesekkurler.html"
       style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
 
-      
-<!-- Name und E-Mail Eingabe -->      
-      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-        <div style="flex: 1;">
-          <label for="name" style="font-weight: bold;">Adınız:</label>
-          <input id="name" name="name" required type="text" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"/>
-        </div>
-        <div style="flex: 1;">
-          <label for="email" style="font-weight: bold;">E-posta:</label>
-          <input id="email" name="email" required type="email" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"/>
-        </div>
-      </div>
-  
-      <label for="message" style="font-weight: bold;">Mesajınız:</label>
-      <textarea id="message" name="message" required rows="4" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"></textarea>
-<!-- 🔲 Google reCAPTCHA Checkbox -->
-<div class="g-recaptcha" data-sitekey="6LcC_BErAAAAACuDjMDloHffF8J6KBdMTvodvF94" style="margin: 20px 0;"></div>
-<!-- Absenden-Button mit verzögerung -->    
-      <button type="submit" style="width: 100%; padding: 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Gönder</button>
-<!-- WhatsApp-Link -->
-      <a href="https://wa.me/905362419158" style="padding: 12px 30px; background-color: #25D366; color: white; text-decoration: none; font-size: 1.2em; border-radius: 4px; margin-top: 20px; display: inline-block;">Bizimle WhatsApp üzerinden sohbet edin</a>
-    </form>
+  <!-- 🕵️ Unsichtbares Honeypot-Feld für Spam-Schutz -->
+  <input type="hidden" name="form-name" value="contact" />
+  <p style="display:none">
+    <label>Bot: <input name="bot-field" /></label>
+  </p>
+
+  <!-- Name und E-Mail Eingabe -->
+  <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+    <div style="flex: 1;">
+      <label for="name" style="font-weight: bold;">Adınız:</label>
+      <input id="name" name="name" required type="text"
+             style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;" />
+    </div>
+    <div style="flex: 1;">
+      <label for="email" style="font-weight: bold;">E-posta:</label>
+      <input id="email" name="email" required type="email"
+             style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;" />
+    </div>
+  </div>
+
+  <!-- Nachricht -->
+  <label for="message" style="font-weight: bold;">Mesajınız:</label>
+  <textarea id="message" name="message" required rows="4"
+            style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; box-sizing: border-box;"></textarea>
+
+  <!-- 🔲 Google reCAPTCHA -->
+  <div class="g-recaptcha" data-sitekey="6LcC_BErAAAAACuDjMDloHffF8J6KBdMTvodvF94" style="margin: 20px 0;"></div>
+
+  <!-- Absenden -->
+  <button type="submit"
+          style="width: 100%; padding: 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+    Gönder
+  </button>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/905362419158"
+     style="padding: 12px 30px; background-color: #25D366; color: white; text-decoration: none; font-size: 1.2em; border-radius: 4px; margin-top: 20px; display: inline-block;">
+    Bizimle WhatsApp üzerinden sohbet edin
+  </a>
+</form>
+
+<!-- 🛡️ Unsichtbares statisches Backup-Formular für Netlify-Erkennung -->
+<form name="contact" netlify hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <textarea name="message"></textarea>
+</form>
+
 <!-- Standortüberschrift -->  
     <h3>Lokasyonumuz</h3>
   
