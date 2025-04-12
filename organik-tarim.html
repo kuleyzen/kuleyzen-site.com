@@ -152,7 +152,8 @@
     background-color: #4e6137;
   }
 }
-
+   
+    
  /* 📂 Submenü im mobilen Layout */
  @media (max-width: 768px) {
   .submenu {
@@ -165,15 +166,16 @@
     display: block;
   }
 }
-
+   
+  
 /* 📵 Bottom-Menü nur auf Mobilgeräten anzeigen */
 @media (min-width: 769px) {
   .bottom-nav {
     display: none;
   }
 }
-    /* 🎮 Nintendo-Style Bottom Navigation (Mobil) */
-    .bottom-grid {
+/* 🎮 Nintendo-Style Bottom Navigation (Mobil) */
+.bottom-grid {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -247,7 +249,7 @@
     padding: 1em 1.2em;
   }
 }
-/* 🎮 Nintendo-Style Bottom Navigation */
+/* 🎮 Vereinfachte Bottom Navigation (mobil): Nur 3 Felder */
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -255,27 +257,41 @@
   width: 100%;
   background-color: #607744;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; /* sorgt für gleichmäßige Verteilung */
   align-items: center;
   padding: 10px;
   z-index: 999;
 }
 
-.bottom-nav a {
+
+.bottom-nav a, 
+.bottom-nav button 
+#mini-cart-mobile{
   background-color: #4e6137;
   color: white;
-  padding: 15px;
+  padding: 12px;  /* Padding leicht erhöht, um Symmetrie zu gewährleisten */
+ 
   border-radius: 50%;
-  font-size: 1.2em;
+  font-size: 1.3em;
   text-align: center;
+  border: none;
   text-decoration: none;
   transition: background 0.3s, transform 0.3s;
-}
+ }
 
-.bottom-nav a:hover {
+.bottom-nav a:hover, 
+.bottom-nav button:hover 
+#mini-cart-mobile{
   background-color: #eef1ea;
   transform: scale(1.1);
   color: #2f2f2f;
+}
+
+/* 📱 Mobil: Warenkorb-Button sichtbar */
+@media (max-width: 768px) {
+  #mini-cart-mobile {
+    display: block;
+  }
 }
 
 /* 📵 Bottom-Menü nur auf Mobil anzeigen */
@@ -355,12 +371,115 @@ body {
   color: #2f2f2f;
   text-decoration: none;
 }
+/* 🛒 Desktop-Icon – Nur auf Desktop anzeigen */
+@media (min-width: 769px) {
+  #mini-cart-desktop {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #607744;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 9999;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  #mini-cart-desktop {
+    display: none !important;
+  }
+}
+
+/* 💻 Desktop-Warenkorb */
+#cart-overlay-desktop {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border: 2px solid #607744;
+  padding: 20px;
+  border-radius: 12px;
+  z-index: 998;
+}
+
+@media (max-width: 768px) {
+  #cart-overlay-desktop {
+    display: none !important;
+  }
+}
+
+/* 📱 Mobil-Warenkorb */
+#cart-overlay-mobile {
+  position: fixed;
+  bottom: 70px; /* über dem Bottom-Menü */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: white;
+  border: 2px solid #607744;
+  padding: 20px;
+  border-radius: 12px;
+  z-index: 998;
+}
+
+@media (min-width: 769px) {
+  #cart-overlay-mobile {
+    display: none !important;
+  }
+}
+/* 💳 Ödeme Sayfası Button Styling für beide Overlays */
+#cart-overlay-desktop a.checkout-btn,
+#cart-overlay-mobile a.checkout-btn {
+  display: block;
+  width: 100%;
+  background-color: #607744;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+#cart-overlay-desktop a.checkout-btn:hover,
+#cart-overlay-mobile a.checkout-btn:hover {
+  background-color: #4e6137;
+  color: #fff;
+}
 </style>
 
   
 </head>
 <body>
 
+  <!-- 🛒 Desktop-Warenkorb-Icon -->
+<div id="mini-cart-desktop" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+
+
+
+<!-- 📦 Overlay mit Warenkorb-Inhalt -->
+<!-- 📦 Desktop-Warenkorb -->
+<div id="cart-overlay-desktop" style="display: none;">
+  <h4>Sepetiniz</h4>
+  <ul id="cart-items-desktop"></ul>
+  <p><strong>Toplam:</strong> <span id="cart-total">0</span> TL</p>
+  <a href="checkout.html" class="checkout-btn">Ödeme Sayfası</a>
+</div>
+<!-- 📱 Mobil-Warenkorb -->
+<div id="cart-overlay-mobile" class="cart-overlay" style="display: none;">
+  <h4>Sepetiniz</h4>
+  <ul id="cart-items-mobile"></ul>
+  <p><strong>Toplam:</strong> <span id="cart-total-mobile">0</span> TL</p>
+  <a href="checkout.html" class="checkout-btn">Ödeme Sayfası</a>
+</div>
 <!-- Hauptnavigation -->
 <nav>
   <ul class="main-nav">
@@ -431,7 +550,7 @@ body {
 <div class="bottom-nav">
   <a href="iletisim.html" title="İletişim">📩</a>
   <button onclick="toggleMenu()">☰</button>
-  <a href="sss.html" title="Sıkça Sorulan Sorular">🔍</a>
+  <button id="mini-cart-mobile" onclick="toggleCart()" title="Sepetiniz">🛒<span id="cart-count-mobile">0</span></button>
 </div>
 
 <!-- 📦 Mobile Kachelmenü -->
@@ -448,6 +567,8 @@ body {
   </div>
   <a class="box" href="sss.html">Sıkça Sorulan Sorular</a>
 </div>
+<!-- 📦 Warenkorb-Overlay -->
+ 
 <!-- Fußzeile mit Copyright -->  
 <footer style="text-align: center; padding: 20px; background-color: #4a5534; color: white;">
   <p>© 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
@@ -502,5 +623,99 @@ body {
     sub.style.display = sub.style.display === "block" ? "none" : "block";
   }
 </script>
+<!-- 🧠 Kuleyzen Warenkorb-Logik (Phase 1) -->
+<script>
+  // 🧺 Warenkorb aus dem Local Storage laden oder mit leerem Korb starten
+  let cart = JSON.parse(localStorage.getItem("kuleyzen_cart")) || [];
+  
+  // 💾 Warenkorb speichern & Anzeige aktualisieren
+  function saveCart() {
+    localStorage.setItem("kuleyzen_cart", JSON.stringify(cart));
+    updateCartDisplay();
+  }
+  
+  // ➕ Produkt hinzufügen
+  function addToCart(name, price, qty = 1) {
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.qty += qty;
+    } else {
+      cart.push({ name, price, qty });
+    }
+    saveCart();
+  }
+  
+  // ➕/➖ Menge anpassen
+  function adjustQty(id, delta) {
+    const input = document.getElementById(id);
+    const current = parseInt(input.value) || 1;
+    const newQty = Math.max(1, current + delta);
+    input.value = newQty;
+  }
+  
+  // 🔢 Menge abrufen
+  function getQty(id) {
+    const input = document.getElementById(id);
+    return parseInt(input.value) || 1;
+  }
+  
+  // 🔄 Anzeige aktualisieren in allen Overlays
+  function updateCartDisplay() {
+    const cartCount = document.getElementById("cart-count");
+    const cartCountMobile = document.getElementById("cart-count-mobile");
+    const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+  
+    if (cartCount) cartCount.textContent = totalCount;
+    if (cartCountMobile) cartCountMobile.textContent = totalCount;
+  
+    const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  
+    const totalElement = document.getElementById("cart-total");
+    const totalElementMobile = document.getElementById("cart-total-mobile");
+    const totalElementDesktop = document.querySelector("#cart-overlay-desktop #cart-total");
+  
+    if (totalElement) totalElement.textContent = total;
+    if (totalElementMobile) totalElementMobile.textContent = total;
+    if (totalElementDesktop) totalElementDesktop.textContent = total;
+  
+    const list = document.getElementById("cart-items");
+    const listMobile = document.getElementById("cart-items-mobile");
+    const listDesktop = document.getElementById("cart-items-desktop");
+  
+    const renderItems = (targetList) => {
+      if (!targetList) return;
+      targetList.innerHTML = "";
+      cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} x${item.qty} – ${item.price * item.qty} TL`;
+        targetList.appendChild(li);
+      });
+    };
+  
+    renderItems(list);
+    renderItems(listMobile);
+    renderItems(listDesktop);
+  }
+  
+  // 🧺 Warenkorb-Overlay ein-/ausblenden
+  function toggleCart() {
+    const overlayDesktop = document.getElementById("cart-overlay-desktop");
+    const overlayMobile = document.getElementById("cart-overlay-mobile");
+    const overlayNeutral = document.getElementById("cart-overlay");
+  
+    [overlayDesktop, overlayMobile, overlayNeutral].forEach(overlay => {
+      if (overlay) {
+        if (overlay.style.display === "none" || overlay.style.display === "") {
+          overlay.style.display = "block";
+        } else {
+          overlay.style.display = "none";
+        }
+      }
+    });
+  }
+  
+  // 📦 Seite geladen → Anzeige aktualisieren
+  document.addEventListener("DOMContentLoaded", updateCartDisplay);
+  </script>
 </body>
 </html>

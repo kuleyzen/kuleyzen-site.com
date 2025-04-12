@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<!-- Seitentitel, Meta-Angaben und eingebettetes CSS -->
+  <!-- Seitentitel, Meta-Angaben und eingebettetes CSS -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kuleyzen - Doğal Zeytinyağı</title>
-<!-- Eingebettetes CSS für Layout und Design -->  
+  <title>Kuleyzen Sipariş Onayı</title>
+  <link rel="stylesheet" href="style.css" />
+<!-- Eingebettetes CSS für Layout und Design -->   
 <style>
   /* 🌿 Grundlegende Layout- und Farbstile */
   body {
@@ -431,7 +432,6 @@ body {
     display: none !important;
   }
 }
-
 /* 💳 Ödeme Sayfası Button Styling für beide Overlays */
 #cart-overlay-desktop a.checkout-btn,
 #cart-overlay-mobile a.checkout-btn {
@@ -456,10 +456,98 @@ body {
   color: #fff;
 }
 
-</style>
+/* 📱 Anzeige je nach Gerät */
+@media (max-width: 768px) {
+  #mini-cart-desktop {
+    display: none;
+  }
+  #mini-cart-mobile {
+    display: block;
+  }
+}
+/* 📋 Stil für die Warenkorb-Tabelle im Checkout */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background-color: #f9f9f4;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background-color: #607744;
+  color: white;
+  text-align: left;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1.05em;
+}
+
+td {
+  padding: 12px;
+  border-top: 1px solid #ddd;
+  font-size: 1em;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tfoot td {
+  font-weight: bold;
+  background-color: #eef1ea;
+  border-top: 2px solid #607744;
+}
+/* 🧾 Stil für das Formular */
+form {
+      background-color: #f9f9f4;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      font-family: sans-serif;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #4a5534;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+      background-color: #fff;
+    }
+
+    form button {
+      background-color: #607744;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    form button:hover {
+      background-color: #4e6137;
+    }
+  </style>
 </head>
 <body>
-
+ 
   <!-- 🛒 Desktop-Warenkorb-Icon -->
 <div id="mini-cart-desktop" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
 
@@ -498,186 +586,273 @@ body {
     <li><a href="iletisim.html">İletişim</a></li>
   </ul>
 </nav>
-<!-- Hauptinhalt: Beschreibung der Nar Ekşisi Produktion -->
-<main>
-<h1>Nar Ekşimiz Hakkında</h1>
-<p>Nar ekşisi, yüzyıllardır sofralarımıza eşlik eden bir lezzet, bir sağlık kaynağı ve aynı zamanda bir emek ürünüdür. Kuleyzen olarak, bu ürünü yalnızca üretmiyoruz – biz onun arkasında duruyoruz. Gerçek bir nar ekşisinin ne olduğunu bilmek, onu tanımakla başlar.</p>
-<p>Biz üretimimizde yalnızca <strong>Katırbaşı</strong> cinsi narları kullanıyoruz. Bu tür, bölgenin iklimine uyumlu ve karakteristik olarak tatlı, yoğun aromalıdır. Her bir nar, mevsiminde <strong>tek tek elle toplanır</strong>. Otomatik makinelerle yapılan kabuk kırma ya da sıkma işlemleri bizde uygulanmaz. Çünkü narın içindeki <strong>beyaz zar kısmı</strong>, makinelerle kaçınılmaz olarak karışıma girer ve bu da nar ekşisine acı bir tat verir. Biz bu riski göze almayız.</p>
-<p>Toplanan narlar, geleneksel yöntemle <strong>elle kabuklarından ayrılır</strong> ve sadece taneleri kullanılarak suyu çıkarılır. Bu saf nar suyu, odun ateşinde – üstelik <strong>kendi zeytin ağaçlarımızdan elde ettiğimiz odunlarla</strong> – yaklaşık <strong>5 ila 10 saat</strong> boyunca kaynatılır. Kaynama süreci boyunca hacim, ilk halinin <strong>onda birine kadar düşürülür</strong>. Yani 15 kilogram nar, yalnızca <strong>yaklaşık 0.75 litre nar ekşisine</strong> dönüşür.</p>
-<p>Bu uzun süreçte başka hiçbir şey eklenmez: <strong>şeker yok, koruyucu yok, katkı maddesi yok.</strong> Bizim için bu bir prensip meselesi. Çünkü bu ürünü yalnızca satmak için değil, <strong>kendi soframızda da gönül rahatlığıyla kullanmak için</strong> üretiyoruz. İşte bu yüzden “gerçek nar ekşisi” diyebiliyoruz.</p>
-<p>Yoğun kıvamı, hafif isli kokusu ve dengeli ekşi-tatlı profiliyle Kuleyzen nar ekşisi, her damlasında doğallığı ve emeği hissettirir. Salatalarda, kısırda, et marinasyonlarında ya da sadece bir dilim ekmek üzerinde… Sofranıza lezzet değil, bir gelenek katmak istiyorsanız – doğru yerdesiniz.</p>
-</main>
-<!-- 🎮 Vereinfachtes Bottom-Menü (mobil) -->
+
+  <main>
+    <h2>Sepetiniz</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Ürün</th>
+          <th>Adet</th>
+          <th>Birim Fiyat</th>
+          <th>Toplam</th>
+        </tr>
+      </thead>
+      <tbody id="checkout-items"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3"><strong>Genel Toplam</strong></td>
+          <td><strong><span id="checkout-total">0</span> TL</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <h2>İletişim Bilgileriniz</h2>
+    <form onsubmit="submitOrder(event)">
+      <label for="name">Adınız</label>
+      <input type="text" id="name" required />
+
+      <label for="note">Notunuz</label>
+      <textarea id="note" rows="4" placeholder="Adres, teslimat notu veya başka bir bilgi..."></textarea>
+
+      <button type="submit">WhatsApp ile Siparişi Gönder</button>
+    </form>
+  </main>
+  <!-- 🎮 Vereinfachtes Bottom-Menü (mobil) -->
 <div class="bottom-nav">
   <a href="iletisim.html" title="İletişim">📩</a>
   <button onclick="toggleMenu()">☰</button>
   <button id="mini-cart-mobile" onclick="toggleCart()" title="Sepetiniz">🛒<span id="cart-count-mobile">0</span></button>
 </div>
-
-<!-- 📦 Mobile Kachelmenü -->
-<div class="mobile-kacheln" id="mobileKacheln">
-  <a class="box" href="index.html">Anasayfa</a>
-  <a class="box" href="hakkimizda.html">Hakkımızda</a>
-  <a class="box" href="urunler.html">Ürünler</a>
-  <a class="box" href="urunlerimizin-uretimi.html" onclick="toggleSubKacheln(event)">Üretim Süreci</a>
-  <!-- 👇 Untermenü: wird per JS eingeblendet -->
-  <div id="subKacheln" style="display:none; margin-top: 0.5em;">
-    <a class="box" href="organik-tarim.html">Organik Tarım</a>
-    <a class="box" href="zeytin-hakkinda-bilgi.html">Zeytin</a>
-    <a class="box" href="nar-hakkinda-bilgi.html">Nar Ekşisi</a>
+  
+  <!-- 📦 Mobile Kachelmenü -->
+  <div class="mobile-kacheln" id="mobileKacheln">
+    <a class="box" href="index.html">Anasayfa</a>
+    <a class="box" href="hakkimizda.html">Hakkımızda</a>
+    <a class="box" href="urunler.html">Ürünler</a>
+    <a class="box" href="urunlerimizin-uretimi.html" onclick="toggleSubKacheln(event)">Üretim Süreci</a>
+    <!-- 👇 Untermenü: wird per JS eingeblendet -->
+    <div id="subKacheln" style="display:none; margin-top: 0.5em;">
+      <a class="box" href="organik-tarim.html">Organik Tarım</a>
+      <a class="box" href="zeytin-hakkinda-bilgi.html">Zeytin</a>
+      <a class="box" href="nar-hakkinda-bilgi.html">Nar Ekşisi</a>
+    </div>
+    <a class="box" href="sss.html">Sıkça Sorulan Sorular</a>
   </div>
-  <a class="box" href="sss.html">Sıkça Sorulan Sorular</a>
-</div>
-<!-- 📦 Warenkorb-Overlay -->
- 
-<!-- Fußzeile mit Copyright -->  
-<footer style="text-align: center; padding: 20px; background-color: #4a5534; color: white;">
-  <p>© 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
-  <p>Son güncelleme: <span id="last-updated">yükleniyor...</span></p>
-</footer>
-
-
-
-<!-- GoatCounter Analytics -->
-<script data-goatcounter="https://kuleyzen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-
-
-<!-- JavaScript letztes update github -->
-<script>
-  fetch("https://api.github.com/repos/kuleyzen/test.test.test/commits/main")
-    .then(res => {
-      if (!res.ok) throw new Error("Veri alınamadı");
-      return res.json();
-    })
-    .then(data => {
-      const date = new Date(data.commit.author.date);
-      const formatted = date.toLocaleString("tr-TR", {
-        dateStyle: "short",
-        timeStyle: "short"
+  <!-- 📦 Warenkorb-Overlay -->
+  <div id="cart-overlay" style="display: none;">
+    <h4>Sepetiniz</h4>
+    <ul id="cart-items"></ul>
+    <p><strong>Toplam:</strong> <span id="cart-total">0</span> TL</p>
+    <a href="checkout.html" class="checkout-btn">Ödeme Sayfası</a>
+  </div>
+  <!-- Fußzeile mit Copyright -->   
+  <footer style="text-align: center; padding: 20px; background-color: #4a5534; color: white;">
+    <p>© 2025 Kuleyzen Aile Çiftliği – Tüm hakları saklıdır.</p>
+    <p>Son güncelleme: <span id="last-updated">yükleniyor...</span></p>
+  </footer>
+  
+  
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://kuleyzen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  
+  <!-- JavaScript letztes update github -->
+  <script>
+    fetch("https://api.github.com/repos/kuleyzen/test.test.test/commits/main")
+      .then(res => {
+        if (!res.ok) throw new Error("Veri alınamadı");
+        return res.json();
+      })
+      .then(data => {
+        const date = new Date(data.commit.author.date);
+        const formatted = date.toLocaleString("tr-TR", {
+          dateStyle: "short",
+          timeStyle: "short"
+        });
+        document.getElementById("last-updated").textContent = formatted;
+      })
+      .catch(err => {
+        console.error("Son güncelleme alınamadı:", err);
+        document.getElementById("last-updated").textContent = "bilgi alınamadı";
       });
-      document.getElementById("last-updated").textContent = formatted;
-    })
-    .catch(err => {
-      console.error("Son güncelleme alınamadı:", err);
-      document.getElementById("last-updated").textContent = "bilgi alınamadı";
-    });
-</script>
-<!-- 📜 Bottom-Navigation Logik -->
-<script>
-  function goTo(url) {
-    window.location.href = url;
-  }
-
-  function toggleMenu() {
-    const menu = document.getElementById("mobileKacheln");
-    const submenu = document.getElementById("subKacheln");
-    if (menu.style.display === "block") {
-      menu.style.display = "none";
-      submenu.style.display = "none";
-    } else {
-      menu.style.display = "block";
+  </script>
+  <!-- 📜 Bottom-Navigation Logik -->
+  <script>
+    function goTo(url) {
+      window.location.href = url;
     }
-  }
-
-  function toggleSubKacheln(event) {
-    event.preventDefault();
-    const sub = document.getElementById("subKacheln");
-    sub.style.display = sub.style.display === "block" ? "none" : "block";
-  }
-</script>
-<!-- 🧠 Kuleyzen Warenkorb-Logik (Phase 1) -->
-<script>
-  // 🧺 Warenkorb aus dem Local Storage laden oder mit leerem Korb starten
-  let cart = JSON.parse(localStorage.getItem("kuleyzen_cart")) || [];
   
-  // 💾 Warenkorb speichern & Anzeige aktualisieren
-  function saveCart() {
-    localStorage.setItem("kuleyzen_cart", JSON.stringify(cart));
-    updateCartDisplay();
-  }
-  
-  // ➕ Produkt hinzufügen
-  function addToCart(name, price, qty = 1) {
-    const existing = cart.find(item => item.name === name);
-    if (existing) {
-      existing.qty += qty;
-    } else {
-      cart.push({ name, price, qty });
-    }
-    saveCart();
-  }
-  
-  // ➕/➖ Menge anpassen
-  function adjustQty(id, delta) {
-    const input = document.getElementById(id);
-    const current = parseInt(input.value) || 1;
-    const newQty = Math.max(1, current + delta);
-    input.value = newQty;
-  }
-  
-  // 🔢 Menge abrufen
-  function getQty(id) {
-    const input = document.getElementById(id);
-    return parseInt(input.value) || 1;
-  }
-  
-  // 🔄 Anzeige aktualisieren in allen Overlays
-  function updateCartDisplay() {
-    const cartCount = document.getElementById("cart-count");
-    const cartCountMobile = document.getElementById("cart-count-mobile");
-    const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
-  
-    if (cartCount) cartCount.textContent = totalCount;
-    if (cartCountMobile) cartCountMobile.textContent = totalCount;
-  
-    const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-  
-    const totalElement = document.getElementById("cart-total");
-    const totalElementMobile = document.getElementById("cart-total-mobile");
-    const totalElementDesktop = document.querySelector("#cart-overlay-desktop #cart-total");
-  
-    if (totalElement) totalElement.textContent = total;
-    if (totalElementMobile) totalElementMobile.textContent = total;
-    if (totalElementDesktop) totalElementDesktop.textContent = total;
-  
-    const list = document.getElementById("cart-items");
-    const listMobile = document.getElementById("cart-items-mobile");
-    const listDesktop = document.getElementById("cart-items-desktop");
-  
-    const renderItems = (targetList) => {
-      if (!targetList) return;
-      targetList.innerHTML = "";
-      cart.forEach(item => {
-        const li = document.createElement("li");
-        li.textContent = `${item.name} x${item.qty} – ${item.price * item.qty} TL`;
-        targetList.appendChild(li);
-      });
-    };
-  
-    renderItems(list);
-    renderItems(listMobile);
-    renderItems(listDesktop);
-  }
-  
-  // 🧺 Warenkorb-Overlay ein-/ausblenden
-  function toggleCart() {
-    const overlayDesktop = document.getElementById("cart-overlay-desktop");
-    const overlayMobile = document.getElementById("cart-overlay-mobile");
-    const overlayNeutral = document.getElementById("cart-overlay");
-  
-    [overlayDesktop, overlayMobile, overlayNeutral].forEach(overlay => {
-      if (overlay) {
-        if (overlay.style.display === "none" || overlay.style.display === "") {
-          overlay.style.display = "block";
-        } else {
-          overlay.style.display = "none";
-        }
+    function toggleMenu() {
+      const menu = document.getElementById("mobileKacheln");
+      const submenu = document.getElementById("subKacheln");
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+        submenu.style.display = "none";
+      } else {
+        menu.style.display = "block";
       }
-    });
-  }
+    }
   
-  // 📦 Seite geladen → Anzeige aktualisieren
+    function toggleSubKacheln(event) {
+      event.preventDefault();
+      const sub = document.getElementById("subKacheln");
+      sub.style.display = sub.style.display === "block" ? "none" : "block";
+    }
+  </script>
+  
+
+  <!-- 🧠 Kuleyzen Checkout-Logik (Mengenänderung + WhatsApp + Reset) -->
+<script>
+    // 🧺 1. Warenkorb laden (oder leeren Korb starten)
+    let cart = JSON.parse(localStorage.getItem("kuleyzen_cart")) || [];
+  
+    // 🔄 2. Checkout-Tabelle im <main> anzeigen
+    function renderCheckout() {
+      const tbody = document.getElementById("checkout-items");
+      const totalEl = document.getElementById("checkout-total");
+      let total = 0;
+      tbody.innerHTML = "";
+  
+      cart.forEach(item => {
+        const itemTotal = item.price * item.qty;
+        total += itemTotal;
+  
+        const row = document.createElement("tr");
+        const nameTd = document.createElement("td");
+nameTd.textContent = item.name;
+
+const qtyTd = document.createElement("td");
+const minusBtn = document.createElement("button");
+minusBtn.textContent = "➖";
+minusBtn.onclick = () => changeQty(item.name, -1);
+
+const qtyText = document.createTextNode(` ${item.qty} `);
+
+const plusBtn = document.createElement("button");
+plusBtn.textContent = "➕";
+plusBtn.onclick = () => changeQty(item.name, 1);
+
+qtyTd.appendChild(minusBtn);
+qtyTd.appendChild(qtyText);
+qtyTd.appendChild(plusBtn);
+
+const priceTd = document.createElement("td");
+priceTd.textContent = `${item.price} TL`;
+
+const totalTd = document.createElement("td");
+totalTd.textContent = `${itemTotal} TL`;
+const deleteBtn = document.createElement("button");
+deleteBtn.textContent = "🗑️";
+deleteBtn.title = "Ürünü sil";
+deleteBtn.onclick = () => removeItem(item.name);
+totalTd.appendChild(deleteBtn);
+
+row.appendChild(nameTd);
+row.appendChild(qtyTd);
+row.appendChild(priceTd);
+row.appendChild(totalTd);
+        tbody.appendChild(row);
+      });
+  
+      totalEl.textContent = total;
+      updateCartDisplay(); // synchronisiere Mini-Overlay
+    }
+  
+    // ➕➖ 3. Menge anpassen
+    function changeQty(name, delta) {
+      const item = cart.find(p => p.name === name);
+      if (!item) return;
+  
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(p => p.name !== name);
+      }
+  
+      saveCart();
+      renderCheckout();
+    }
+  
+    // ❌ 4. Einzelnes Produkt löschen
+    function removeItem(name) {
+      cart = cart.filter(p => p.name !== name);
+      saveCart();
+      renderCheckout();
+    }
+  
+    // 💾 5. Warenkorb speichern & Overlay aktualisieren
+    function saveCart() {
+      localStorage.setItem("kuleyzen_cart", JSON.stringify(cart));
+      updateCartDisplay();
+    }
+  
+    // 🟩 6. Mini-Warenkorb-Overlay aktualisieren
+    function updateCartDisplay() {
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      const total = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
+  
+      const countEl = document.getElementById("cart-count");
+      const countMobile = document.getElementById("cart-count-mobile");
+      const totalEl = document.getElementById("cart-total");
+      const listEl = document.getElementById("cart-items");
+  
+      if (countEl) countEl.textContent = count;
+      if (countMobile) countMobile.textContent = count;
+      if (totalEl) totalEl.textContent = total;
+  
+      if (listEl) {
+        listEl.innerHTML = "";
+        cart.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = `${item.name} x${item.qty} – ${item.price * item.qty} TL`;
+          listEl.appendChild(li);
+        });
+      }
+    }
+  
+   // 🧺 Warenkorb ein- und ausblenden
+function toggleCart() {
+  const overlay = document.getElementById("cart-overlay");
+  if (overlay.style.display === "none" || overlay.style.display === "") {
+    overlay.style.display = "block"; // Zeige das Overlay an
+  } else {
+    overlay.style.display = "none"; // Verstecke das Overlay
+  }
+}
+
+  // 📦 Seite geladen → Warenkorb-Anzeige aktualisieren
   document.addEventListener("DOMContentLoaded", updateCartDisplay);
+
+  
+    // ✅ 8. Bestellung via WhatsApp senden und Warenkorb leeren
+    function submitOrder(event) {
+      event.preventDefault();
+  
+      const name = document.getElementById("name").value;
+      //"const phone = document.getElementById("phone").value;   (momentan inaktiv wird später entfernt!!!)//
+      const note = document.getElementById("note").value;
+  
+      let message = `📦 Yeni Sipariş / Kuleyzen\n\n🛍️ Ürünler:\n`;
+      cart.forEach(item => {
+        message += `• ${item.name} x${item.qty} → ${item.price * item.qty} TL\n`;
+      });
+  
+      const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      message += `\n💰 Toplam: ${total} TL\n\n`;
+      message += `👤 Ad: ${name}`;
+      if (note) message += `\n📝 Not: ${note}`;
+  
+      const url = `https://wa.me/905362419158?text=${encodeURIComponent(message)}`;
+  
+      // 🧹 Nach Versand: LocalStorage leeren und Seite zurücksetzen
+      localStorage.removeItem("kuleyzen_cart");
+      cart = [];
+      renderCheckout();
+  
+      window.open(url, "_blank");
+    }
+  
+    // ⏳ 9. Initialisierung nach Seitenladezeitpunkt
+    document.addEventListener("DOMContentLoaded", renderCheckout);
   </script>
 </body>
 </html>
